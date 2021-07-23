@@ -11,6 +11,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'google', content: 'notranslate'},
       { hid: 'description', name: 'description', content: 'Juls07 is a game developer, web developer and pixel artist.' },
       { property: 'og:type', content: 'website' },
       { property: 'og:image', content: '/og.png' },
@@ -20,10 +21,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Roboto&display=swap'
-      }
+      { rel: 'preload', href: 'https://fonts.googleapis.com/css?family=Roboto&display=swap', as: 'style', onload: 'this.onload=null;this.rel="stylesheet"' }
     ]
   },
 
