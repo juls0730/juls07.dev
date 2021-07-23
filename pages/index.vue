@@ -28,6 +28,8 @@ export default {}
 <style>
 body {
   font-family: 'Roboto', sans-serif;
+  @apply dark:bg-gray-800;
+  @apply dark:text-white;
 }
 
 h1 {

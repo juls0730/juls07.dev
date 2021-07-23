@@ -3,7 +3,7 @@
     <!----<img class="w-full rounded-xl h-auto object-cover" src="https://source.unsplash.com/odxB5oIG_iA/400x250">--->
     <div class="p-6">
       <h2 class="text-2xl mt-2 font-semibold">{{ name }}</h2>
-      <p class="mt-2 text-gray-600">{{ description }}</p>
+      <p class="mt-2 text-gray-600 dark:text-gray-300">{{ description }}</p>
       <div v-if="link1 && link2" class="mt-2 float-right pb-3">
           <a :href="link1">
             <button class="button rounded-l">
