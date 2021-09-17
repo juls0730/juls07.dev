@@ -12,8 +12,8 @@
       <div class="pl-3 md:pl-8 pr-1">
         <div class="pb-3 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
           <Card
-            name="Sundae Escape"
-            description="Sundae escape is a bullet hell platformer. You are trying to go back to work but when you awake you find your self in an icecream apocolypse. You must save the world."
+            name="Idle Store Tycoon"
+            description="Idle Store Tycoon is an idle tycoon game meant to give a relaxing eperience!"
           />
         </div>
       </div>
