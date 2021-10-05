@@ -5,7 +5,7 @@
     </div>
     <div>
       <h2 class="subheader">About Me</h2>
-      <p class="pt-1 pl-4 pb-3 md:pl-8 pr-1" >Hello, I'm juls07, I am 13 years old and I love game development. I have been programming since I was 10 years old, I am a skilled developer in html, vue, Java, JavaScript, ruby, and lua. It's so amazing to me that you can write code to tell a computer to do anything!</p>
+      <p class="pt-1 pl-4 pb-3 md:pl-8 pr-1" >Hello, I'm juls07, I am 13 years old and I love game development. I have been programming since I was 10 years old, I am a skilled developer in html, vue, Java, JavaScript, ruby, and C#. It's so amazing to me that you can write code to tell a computer to do anything!</p>
     </div>
     <div>
       <h2 class="pt-5 subheader">Projects</h2>
