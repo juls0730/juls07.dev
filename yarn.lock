@@ -1640,6 +1640,21 @@
     "consola" "^2.15.0"
     "eslint-webpack-plugin" "^2.4.1"
 
+"@nuxtjs/google-analytics@^2.4.0":
+  "integrity" "sha512-rDQTwHIjyjVrx8GywHPuWykJ3jRFGaHl5Iqji/y8tQWUc0yGEeHxOoR0yimzxnTS1Ph2/PubQYpgnVeEPEdL/A=="
+  "resolved" "https://registry.npmjs.org/@nuxtjs/google-analytics/-/google-analytics-2.4.0.tgz"
+  "version" "2.4.0"
+  dependencies:
+    "vue-analytics" "^5.22.1"
+
+"@nuxtjs/gtm@^2.4.0":
+  "integrity" "sha512-Of5KuBBFwRjyJ6AuRrIQsh8J6ksIN2UegJDE8nBiTAanbwQBsAJ0hZibV9SjhKdGvGvWpbShQ4yR2bmQgY6XKA=="
+  "resolved" "https://registry.npmjs.org/@nuxtjs/gtm/-/gtm-2.4.0.tgz"
+  "version" "2.4.0"
+  dependencies:
+    "chalk" "^4.1.0"
+    "semver" "^7.3.2"
+
 "@nuxtjs/tailwindcss@^4.2.0":
   "integrity" "sha512-Sku7VETunn5YmvzkXFDuRdP1gUGau02eh5HtcAsI9//1hpSuEN49n3XhatBrPOXQ57WhUlnjXf0/LjT9KQH0+A=="
   "resolved" "https://registry.npmjs.org/@nuxtjs/tailwindcss/-/tailwindcss-4.2.1.tgz"
@@ -12250,6 +12265,11 @@
   "integrity" "sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ=="
   "resolved" "https://registry.npmjs.org/vm-browserify/-/vm-browserify-1.1.2.tgz"
   "version" "1.1.2"
+
+"vue-analytics@^5.22.1":
+  "integrity" "sha512-HPKQMN7gfcUqS5SxoO0VxqLRRSPkG1H1FqglsHccz6BatBatNtm/Vyy8brApktZxNCfnAkrSVDpxg3/FNDeOgQ=="
+  "resolved" "https://registry.npmjs.org/vue-analytics/-/vue-analytics-5.22.1.tgz"
+  "version" "5.22.1"
 
 "vue-client-only@^2.0.0":
   "integrity" "sha512-vKl1skEKn8EK9f8P2ZzhRnuaRHLHrlt1sbRmazlvsx6EiC3A8oWF8YCBrMJzoN+W3OnElwIGbVjsx6/xelY1AA=="

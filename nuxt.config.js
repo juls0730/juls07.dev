@@ -41,16 +41,26 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/google-analytics',
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss'
   ],
 
+  googleAnalytics: {
+    id: 'UA-183042760-3'
+  },
+
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxt/content'
+    '@nuxt/content',
+    '@nuxtjs/gtm'
   ],
+
+  gtm: {
+    id: 'GTM-5M6WL6M'
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
