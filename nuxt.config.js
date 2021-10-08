@@ -49,7 +49,9 @@ export default {
   ],
 
   googleAnalytics: {
-    id: 'UA-183042760-3'
+    id: 'UA-183042760-3',
+    layer: 'dataLayer',
+    pageTracking: true
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
