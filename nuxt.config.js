@@ -34,7 +34,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [{ src: '~/plugins/lineNumbers.js', mode: 'client' }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -51,7 +51,13 @@ export default {
   googleAnalytics: {
     id: 'UA-183042760-3',
     layer: 'dataLayer',
-    pageTracking: true
+    pageTracking: true,
+    debug: {
+      sendHitTask: true // true
+    },
+    set: [
+      { field: 'anonymizeIp', value: true }
+    ]
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
