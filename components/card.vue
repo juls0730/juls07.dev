@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-xl shadow-xl pb-5">
+  <div class="rounded-xl pl-2 shadow-xl pb-5">
     <!----<img class="w-full rounded-xl h-auto object-cover" src="https://source.unsplash.com/odxB5oIG_iA/400x250">--->
     <div class="p-6">
       <h2 class="text-2xl mt-2 font-semibold">{{ name }}</h2>
