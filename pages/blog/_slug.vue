@@ -1,8 +1,8 @@
 <template>
   <div>
     <Nav />
-    <div class="flex justify-center">
-      <div class="w-5/12 h-auto p-3">
+    <div class="md:flex md:justify-center block">
+      <div class="blog-content">
         <article>
           <h1>{{ article.title }}</h1>
           <p class="text-gray-400 pb-1">{{ article.description }}</p>
@@ -56,6 +56,10 @@ h3 {
   @apply text-xl;
   @apply font-semibold;
   @apply pb-3;
+}
+
+.blog-content {
+  @apply lg:w-5/12 md:w-8/12 w-full h-auto p-3;
 }
 
 .nuxt-content-highlight {
