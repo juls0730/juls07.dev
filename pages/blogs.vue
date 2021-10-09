@@ -9,6 +9,12 @@
           link1="/blog/my-first-blog-post"
           button1="Read Now!"
         />
+        <Card
+          name="Day 14 of 100 Days of Game Dev"
+          description="what I did on day 14 of 100 Days of Game dev!"
+          link1="/blog/day-14-100DaysOfGameDev"
+          button1="Read Now!"
+        />
       </div>
     </div>
   </div>
