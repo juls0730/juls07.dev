@@ -174,6 +174,9 @@ pre[class*="language-"].line-numbers > code {
   .token.punctuation {
     color: #fff;
   }
+  .token.operator {
+    background: hsla(0, 0%, 0%, 0);
+  }
   .token.namespace {
     opacity: 0.7;
   }
