@@ -5,6 +5,11 @@
   </url>
   <url>
     <loc>https://juls07.dev/blogs</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://juls07.dev/blog</loc>
+    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://juls07.dev/blog/my-first-blog-post</loc>
