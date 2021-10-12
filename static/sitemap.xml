@@ -1,16 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>https://juls07.dev/</loc>
-  <lastmod>2021-10-04T20:22:56+00:00</lastmod>
-</url>
-
-
+<urlset xmlns=”http://www.sitemaps.org/schemas/sitemap/0.9“>
+  <url>
+    <loc>https://juls07.dev</loc>
+  </url>
+  <url>
+    <loc>https://juls07.dev/blogs</loc>
+  </url>
+  <url>
+    <loc>https://juls07.dev/blog/my-first-blog-post</loc>
+  </url>
+  <url>
+    <loc>https://juls07.dev/blog/day-14-100DaysOfGameDev</loc>
+  </url>
+  <url>
+    <loc>https://twitter.com/julie4055_</loc>
+  </url>
+  <url>
+    <loc>https://github.com/juls0730</loc>
+  </url>
 </urlset>
