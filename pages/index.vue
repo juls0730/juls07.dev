@@ -9,8 +9,8 @@
       <p class="pt-1 pl-4 pb-3 md:pl-8 pr-1" >Hello, I'm juls07, I am 13 years old and I love game development.
         I have been programming since I was 10 years old, I am a skilled developer in html, vue, Java, JavaScript, ruby, and C#.
         It's so amazing to me that you can write code to tell a computer to do anything! I also have a 
-        <a class="text-brand-secondary hover:underline" href="github.com/juls0730">Github</a> and a 
-        <a class="text-brand-secondary hover:underline" href="twitter.com/julie4055_">Twitter</a> so feel free to follow me if you want!</p>
+        <a class="text-brand-secondary hover:underline" href="https://github.com/juls0730">Github</a> and a 
+        <a class="text-brand-secondary hover:underline" href="https://twitter.com/julie4055_">Twitter</a> so feel free to follow me if you want!</p>
     </div>
     <div>
       <h2 class="pt-5 subheader">Projects</h2>
