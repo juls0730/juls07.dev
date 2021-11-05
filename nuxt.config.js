@@ -62,13 +62,13 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxt/content',
-    '@nuxtjs/gtm'
+    '@nuxt/content'
+    //'@nuxtjs/gtm'
   ],
 
-  gtm: {
-    id: 'GTM-5M6WL6M'
-  },
+ // gtm: {
+ //   id: 'GTM-5M6WL6M'
+ // },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
