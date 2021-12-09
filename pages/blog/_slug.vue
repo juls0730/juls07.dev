@@ -5,13 +5,15 @@
       <div class="blog-content">
         <article>
           <h1>{{ article.title }}</h1>
-          <p class="text-gray-400 pb-1">{{ article.description }}</p>
-          <div v-if="article.img == !null">
-            <img :src="article.img" :alt="article.alt" />
-          </div>
-          <p class="pb-5">
+          <p class="dark:text-gray-500 text-gray-600 pb-1">
+            {{ article.description }}
+          </p>
+          <p class="dark:text-gray-500 text-gray-600 pb-5">
             {{ formatDate(article.createdAt) }} | {{ article.writer }}
           </p>
+          <div v-if="article.img == !null">
+            <img :src="article.img" :alt="article.alt">
+          </div>
           <nuxt-content :document="article" />
         </article>
       </div>
@@ -20,46 +22,33 @@
 </template>
 
 <script>
-import Prism from "prismjs";
-import "prismjs/plugins/line-numbers/prism-line-numbers.js";
-import "prismjs/components/prism-bash.js";
+import Prism from 'prismjs'
+import 'prismjs/plugins/line-numbers/prism-line-numbers.js'
+import 'prismjs/components/prism-bash.js'
 export default {
-  async asyncData({ $content, params }) {
-    const article = await $content("articles", params.slug).fetch();
-    return { article };
+  async asyncData ({ $content, params }) {
+    const article = await $content('articles', params.slug).fetch()
+    return { article }
   },
+  /* eslint-disable */
   mounted() {
-    Prism.highlightAll();
+    Prism.highlightAll()
   },
+  /* eslint-enable */
   methods: {
-    formatDate(date) {
-      const options = { year: "numeric", month: "long", day: "numeric" };
-      return new Date(date).toLocaleDateString("en", options);
-    },
-  },
-};
+    formatDate (date) {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' }
+      return new Date(date).toLocaleDateString('en', options)
+    }
+  }
+}
 </script>
 
 <style>
-body {
-  font-family: "Roboto", sans-serif;
-  @apply dark:bg-gray-800;
-  @apply dark:text-white;
-}
-h1 {
-  @apply text-4xl;
-  @apply font-semibold;
-  @apply pb-3;
-}
-h2 {
-  @apply text-2xl;
-  @apply font-semibold;
-  @apply pb-3;
-}
-h3 {
-  @apply text-xl;
-  @apply font-semibold;
-  @apply pb-3;
+a {
+    @apply no-underline;
+    @apply hover:underline;
+    @apply text-brand-secondary;
 }
 .blog-content {
   @apply lg:w-5/12 md:w-8/12 w-full h-auto p-3;
