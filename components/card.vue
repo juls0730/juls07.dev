@@ -4,10 +4,9 @@
       <h2 class="text-2xl mt-2 font-semibold">
         {{ name }}
       </h2>
-      <p class="mt-2 text-gray-600 dark:text-gray-300 h-2/6">
+      <p class="mt-2 block text-gray-600 dark:text-gray-300">
         {{ description }}
       </p>
-      <br>
       <div v-if="link1 && link2" class="mt-2 pb-1">
         <a :href="link1">
           <button class="button rounded-l">

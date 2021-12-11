@@ -1,7 +1,7 @@
 <template>
   <nav>
     <div class="p-7">
-      <div class="hidden md:block md:ml-1 md:pr-4 md:space-x-5">
+      <div class="hidden md:block md:ml-1 md:pr-4 md:space-x-5 text-gray-900 dark:text-gray-50">
         <router-link
           class="font-semibold text-gray-900 dark:text-gray-50 hover:underline"
           to="/"
@@ -17,7 +17,7 @@
         </router-link>
       </div>
       <header
-        class="md:hidden px-2 bg-blue-gray-600 flex flex-wrap items-center"
+        class="md:hidden flex flex-wrap items-center"
       >
         <label
         for="menu-toggle"
@@ -36,17 +36,17 @@
 
         <div id="menu" class="hidden">
           <ul class="text-base text-gray-900 dark:text-gray-50">
-            <li class="inline-list">
+            <li class="inline-list text-gray-900 dark:text-gray-50">
               <router-link
-                class="px-0 pl-4 block font-semibold hover:underline"
+                class="px-0 block font-semibold hover:underline text-gray-900 dark:text-gray-50"
                 to="/"
               >
                 Home
               </router-link>
             </li>
-            <li class="inline-list">
+            <li class="inline-list text-gray-900 dark:text-gray-50">
               <router-link
-                class="px-0 block font-semibold hover:underline"
+                class="px-0 block font-semibold hover:underline text-gray-900 dark:text-gray-50"
                 to="/blogs"
               >
                 My Blog
@@ -75,5 +75,4 @@ export default {}
   float: left;
   padding-right: 1rem;
 }
-
 </style>

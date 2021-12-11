@@ -7,7 +7,7 @@
           <div class="column is-three-fifths is-offset-one-fifth">
             <div v-for="article in articles" :key="article.title" class="mb-5 p-3">
               <p class="title is-4">
-                <nuxt-link :to="'/blog/'+article.slug">
+                <nuxt-link class="article-link" :to="'/blog/'+article.slug">
                   {{ article.title }}
                 </nuxt-link>
               </p>
@@ -32,3 +32,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.article-link {
+  @apply text-brand-secondary;
+  @apply hover:underline;
+}
