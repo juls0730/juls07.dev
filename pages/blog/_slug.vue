@@ -50,6 +50,33 @@ a {
     @apply hover:underline;
     @apply text-brand-secondary;
 }
+/* list style stuff */
+ol, ul {
+    margin: 0 !important;
+    padding: revert !important;
+    list-style: revert !important;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    @apply dark:bg-gray-800;
+    @apply dark:text-white;
+}
+h1 {
+  @apply text-4xl;
+  @apply font-semibold;
+  @apply pb-2;
+}
+h2 {
+  @apply text-2xl;
+  @apply font-semibold;
+  @apply pb-2;
+}
+h3 {
+  @apply text-xl;
+  @apply font-semibold;
+  @apply pb-2;
+}
 .blog-content {
   @apply lg:w-5/12 md:w-8/12 w-full h-auto p-3;
 }
