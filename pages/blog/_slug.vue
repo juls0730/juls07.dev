@@ -11,9 +11,10 @@
           <p class="dark:text-gray-500 text-gray-600 pb-5">
             {{ formatDate(article.createdAt) }} | {{ article.writer }}
           </p>
-          <div v-if="article.img == !null">
-            <img :src="article.img" :alt="article.alt">
+          <div v-if="article.img">
+            <img :src="article.img" :alt="article.alt" />
           </div>
+          <br />
           <nuxt-content :document="article" />
         </article>
       </div>
@@ -46,21 +47,26 @@ export default {
 
 <style>
 a {
-    @apply no-underline;
-    @apply hover:underline;
-    @apply text-brand-secondary;
+  @apply no-underline;
+  @apply hover:underline;
+  @apply text-brand-secondary;
+}
+br.article {
+  @apply my-3;
+  display: block;
 }
 /* list style stuff */
-ol, ul {
-    margin: 0 !important;
-    padding: revert !important;
-    list-style: revert !important;
+ol,
+ul {
+  margin: 0 !important;
+  padding: revert !important;
+  list-style: revert !important;
 }
 
 body {
-    font-family: "Roboto", sans-serif;
-    @apply dark:bg-gray-800;
-    @apply dark:text-white;
+  font-family: "Roboto", sans-serif;
+  @apply dark:bg-gray-800;
+  @apply dark:text-white;
 }
 h1 {
   @apply text-4xl;
@@ -68,6 +74,7 @@ h1 {
   @apply pb-2;
 }
 h2 {
+  @apply pt-4;
   @apply text-2xl;
   @apply font-semibold;
   @apply pb-2;
@@ -204,7 +211,7 @@ pre[class*="language-"].line-numbers > code {
   .token.attr-value,
   .token.hex,
   .token.string {
-    color: #B0C975;
+    color: #b0c975;
   }
   .token.property,
   .token.entity,
@@ -214,7 +221,7 @@ pre[class*="language-"].line-numbers > code {
     color: #c27628;
   }
   .token.regex {
-    color: #9B71C6;
+    color: #9b71c6;
   }
   .token.entity {
     cursor: help;
@@ -227,11 +234,11 @@ pre[class*="language-"].line-numbers > code {
     color: #fdfba8;
   }
   .token.number {
-    color: #8799B0;
+    color: #8799b0;
   }
   .token.important,
   .token.deliminator {
-    color: #E45734;
+    color: #e45734;
   }
   /* Line highlight plugin */
   .line-highlight.line-highlight {
