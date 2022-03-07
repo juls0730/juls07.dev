@@ -14,6 +14,15 @@
           <div v-if="article.img">
             <img :src="article.img" :alt="article.alt" />
           </div>
+          <ul v-if="article.tags" class="pl-0 flex space-x-3 mt-2">
+            <li
+              v-for="tag in article.tags"
+              class="text-gray-400 font-bold"
+              :key="tag"
+            >
+              {{ tag }}
+            </li>
+          </ul>
           <br />
           <nuxt-content :document="article" />
         </article>
@@ -31,9 +40,40 @@ export default {
     const article = await $content('articles', params.slug).fetch()
     return { article }
   },
+  head () {
+    return {
+      title: this.article.title,
+      meta: [
+        // Open Graph
+        { hid: 'og:title', property: 'og:title', content: this.article.title },
+        { hid: 'og:type', property: 'og:type', content: 'article' },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: `https://juls07.dev/${this.article.img}`
+        },
+        // Twitter Card
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.article.title
+        },
+        {
+          hid: 'twitter:card',
+          name: 'twitter:card',
+          content: 'summary_large_image'
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: `https://juls07.dev/${this.article.img}`
+        }
+      ]
+    }
+  },
   /* eslint-disable */
-  mounted() {
-    Prism.highlightAll()
+  mounted () {
+    Prism.highlightAll();
   },
   /* eslint-enable */
   methods: {
@@ -46,6 +86,12 @@ export default {
 </script>
 
 <style>
+li {
+  list-style-type: none;
+}
+ul {
+  padding-left: 0;
+}
 a {
   @apply no-underline;
   @apply hover:underline;

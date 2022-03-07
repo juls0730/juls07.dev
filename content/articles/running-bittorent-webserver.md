@@ -8,6 +8,7 @@ tags:
   - Linux
   - Bittorrent
   - Docker
+  - Web server
 ---
 Recently, I started running a qbittorrent webserver on my raspberry pi 4B+ using [this docker image](https://hotio.dev/containers/qbittorrent/), It has been quite a journey. First, I started looking for a way to run a qbittorrent in a container, this is how I run all the applications on my raspberry pi and I inevibly asked in the [Arch linux discord server](https://discord.gg/3m6dbPR) and I got a reply from @runsamok on discord and they reccomend the docker image I mentioned earlier. Then I started seeding linux distros (obviously) and I started with a batch of about 7 give or take, Ubuntu 18.04, Ubuntu 20.04, Ubuntu 21.04, Arch Linux (duh), Rocky Linux, and tails linux. I shotly realized that Rocky and tails are baren wastelands when it comes to people wanting to torrent them so I eventually Scrapped them.
 <br class="article"/>
