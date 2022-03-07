@@ -32,57 +32,70 @@
 </template>
 
 <script>
-import Prism from 'prismjs'
-import 'prismjs/plugins/line-numbers/prism-line-numbers.js'
-import 'prismjs/components/prism-bash.js'
+import Prism from "prismjs";
+import "prismjs/plugins/line-numbers/prism-line-numbers.js";
+import "prismjs/components/prism-bash.js";
 export default {
-  async asyncData ({ $content, params }) {
-    const article = await $content('articles', params.slug).fetch()
-    return { article }
+  async asyncData({ $content, params }) {
+    const article = await $content("articles", params.slug).fetch();
+    return { article };
   },
-  head () {
+  head() {
     return {
       title: this.article.title,
       meta: [
-        // Open Graph
-        { hid: 'og:title', property: 'og:title', content: this.article.title },
-        { hid: 'og:type', property: 'og:type', content: 'article' },
+        { charset: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { name: "google", content: "notranslate" },
         {
-          hid: 'og:image',
-          property: 'og:image',
-          content: `https://juls07.dev${this.article.img}`
+          hid: "description",
+          name: "description",
+          content:
+            "Juls07 is a game developer, web developer and pixel artist.",
+        },
+        // Open Graph
+        { hid: "og:title", property: "og:title", content: this.article.title },
+        { hid: "og:type", property: "og:type", content: "article" },
+        {
+          hid: "og:image",
+          property: "og:image",
+          content: `https://juls07.dev${this.article.img}`,
         },
         // Twitter Card
         {
-          hid: 'twitter:title',
-          name: 'twitter:title',
-          content: this.article.title
+          hid: "twitter:title",
+          name: "twitter:title",
+          content: this.article.title,
         },
         {
-          hid: 'twitter:card',
-          name: 'twitter:card',
-          content: 'summary_large_image'
+          hid: "twitter:card",
+          name: "twitter:card",
+          content: "summary_large_image",
         },
         {
-          hid: 'twitter:image',
-          name: 'twitter:image',
-          content: `https://juls07.dev${this.article.img}`
-        }
-      ]
-    }
+          hid: "twitter:image",
+          name: "twitter:image",
+          content: `https://juls07.dev${this.article.img}`,
+        },
+      ],
+      link: [
+        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+        { rel: "stylesheet", type: "text/css", href: "/main.css" },
+      ],
+    };
   },
   /* eslint-disable */
-  mounted () {
+  mounted() {
     Prism.highlightAll();
   },
   /* eslint-enable */
   methods: {
-    formatDate (date) {
-      const options = { year: 'numeric', month: 'long', day: 'numeric' }
-      return new Date(date).toLocaleDateString('en', options)
-    }
-  }
-}
+    formatDate(date) {
+      const options = { year: "numeric", month: "long", day: "numeric" };
+      return new Date(date).toLocaleDateString("en", options);
+    },
+  },
+};
 </script>
 
 <style>

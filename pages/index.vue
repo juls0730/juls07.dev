@@ -2,28 +2,35 @@
   <div>
     <Nav />
     <div class="flex items-center justify-center">
-      <h1 class="header">
-        Juls07
-      </h1>
+      <h1 class="header">Juls07</h1>
     </div>
     <div>
-      <h2 class="subheader">
-        About Me
-      </h2>
+      <h2 class="subheader">About Me</h2>
       <p class="pt-1 pl-4 pb-3 md:pl-8 pr-1">
-        Hello, I'm juls07, I am 13 years old and I love web development.
-        I have been programming since I was 10 years old, I am a skilled developer in html, vue, Java, JavaScript, ruby, and C#.
-        It's so amazing to me that you can write code to tell a computer to do anything! I also have a
+        Hello, I'm juls07, I am 13 years old and I love web development. I have
+        been programming since I was 10 years old, I am a skilled developer in
+        html, vue, Java, JavaScript, ruby, and C#. It's so amazing to me that
+        you can write code to tell a computer to do anything! I also have a
         <a class="socails-link" href="github.com/juls0730">Github</a> and a
-        <a class="socials-link" href="twitter.com/julie4055_">Twitter</a> so feel free to follow me if you want!
+        <a class="socials-link" href="twitter.com/julie4055_">Twitter</a> so
+        feel free to follow me if you want!
       </p>
     </div>
     <div>
-      <h2 class="pt-5 subheader">
-        Projects
-      </h2>
+      <h2 class="pt-5 subheader">Projects</h2>
       <div class="pl-3 md:pl-8 pr-1">
-        <div class="pb-3 grid grid-cols-1 gap-2 md:gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+        <div
+          class="
+            pb-3
+            grid grid-cols-1
+            gap-2
+            md:gap-4
+            sm:grid-cols-1
+            md:grid-cols-2
+            lg:grid-cols-2
+            xl:grid-cols-3
+          "
+        >
           <Card
             name="PHP Forum"
             description="This is my attempt at a forum written in php, its not great but it works."
@@ -49,44 +56,71 @@
 </template>
 
 <script>
-export default {}
+export default {
+  head: {
+    title: "Juls07",
+    htmlAttrs: {
+      lang: "en",
+    },
+    meta: [
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "google", content: "notranslate" },
+      {
+        hid: "description",
+        name: "description",
+        content: "Juls07 is a game developer, web developer and pixel artist.",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:image", content: "/og.png" },
+      { property: "og:title", content: "Juls07" },
+      { property: "og:description", content: "Juls07's website" },
+      { property: "og:url", content: "https://juls07.dev" },
+    ],
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "stylesheet", type: "text/css", href: "/main.css" },
+    ],
+  },
+};
 </script>
 
 <style>
 body {
-    font-family: "Roboto", sans-serif;
-    @apply dark:bg-gray-800;
-    @apply dark:text-white;
+  font-family: "Roboto", sans-serif;
+  @apply dark:bg-gray-800;
+  @apply dark:text-white;
 }
-  .header {
-    @apply text-5xl;
-    @apply md:text-7xl;
-    @apply from-brand-main;
-    @apply to-brand-secondary;
-    @apply bg-gradient-to-r;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    @apply h-screen;
-    @apply text-center;
-    @apply font-semibold;
-    vertical-align: middle;
-    line-height: 100vh;
-  }
-  .subheader {
-    @apply text-3xl;
-    @apply md:text-5xl;
-    @apply pt-2;
-    @apply pl-3;
-    @apply md:pl-6;
-    @apply md:pt-3;
-    @apply md:pb-3;
-    @apply pb-2;
-    @apply text-brand-secondary;
-    @apply font-semibold;
-  }
+.header {
+  @apply text-5xl;
+  @apply md:text-7xl;
+  @apply from-brand-main;
+  @apply to-brand-secondary;
+  @apply bg-gradient-to-r;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  @apply h-screen;
+  @apply text-center;
+  @apply font-semibold;
+  vertical-align: middle;
+  line-height: 100vh;
+}
+.subheader {
+  @apply text-3xl;
+  @apply md:text-5xl;
+  @apply pt-2;
+  @apply pl-3;
+  @apply md:pl-6;
+  @apply md:pt-3;
+  @apply md:pb-3;
+  @apply pb-2;
+  @apply text-brand-secondary;
+  @apply font-semibold;
+}
 .socials-link {
   @apply text-brand-secondary;
   @apply hover:underline;
 }
 </style>
+

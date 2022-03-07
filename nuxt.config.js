@@ -3,28 +3,6 @@ export default {
   target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
-  head: {
-    title: 'Juls07',
-    htmlAttrs: {
-      lang: 'en',
-    },
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'google', content: 'notranslate'},
-      { hid: 'description', name: 'description', content: 'Juls07 is a game developer, web developer and pixel artist.' },
-      { property: 'og:type', content: 'website' },
-      { property: 'og:image', content: '/og.png' },
-      { property: 'og:title', content: 'Juls07' },
-      { property: 'og:description', content: "Juls07's website" },
-      { property: 'og:url', content: 'https://juls07.dev' }
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', type: 'text/css', href: '/main.css' },
-    ]
-  },
-
   server: {
     port: 8000,
     host: '0.0.0.0'
