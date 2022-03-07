@@ -50,7 +50,7 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: `https://juls07.dev/${this.article.img}`
+          content: `https://juls07.dev${this.article.img}`
         },
         // Twitter Card
         {
@@ -66,7 +66,7 @@ export default {
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: `https://juls07.dev/${this.article.img}`
+          content: `https://juls07.dev${this.article.img}`
         }
       ]
     }
