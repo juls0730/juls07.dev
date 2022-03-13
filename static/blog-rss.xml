@@ -20,6 +20,7 @@
                 </description>
                 <link>https://juls07.dev/blog/why-i-chose-arch</link>
                 <guid isPermaLink="false">d2cfc3a5c3ba96a0d8dce040ba5f5f8b</guid>
+                <pubDate>Mon, 7 Mar 2022 11:42:00 CST</pubDate>
             </item>
             <item>
                 <title>Running a qbittorrent webserver!</title>
@@ -33,6 +34,7 @@
 https://juls07.dev/blog/running-bittorent-webserver
                     </link>
                     <guid isPermaLink="false">c26925c11762ba38be2a72468768d96a</guid>
+                    <pubDate>Mon, 7 Mar 2022 11:42:00 CST</pubDate>
                 </item>
                 <item>
                     <title>My First Blog Post</title>
@@ -43,6 +45,7 @@ https://juls07.dev/blog/running-bittorent-webserver
                     </description>
                     <link>https://juls07.dev/blog/my-first-blog-post</link>
                     <guid isPermaLink="false">b1dc07a69ea8313b94b06ceca9a5e222</guid>
+                    <pubDate>Fri, 8 Oct 2021 20:03:00 CST</pubDate>
                 </item>
                 <item>
                     <title>Day 14 of 100 Days of Game dev</title>
@@ -53,6 +56,7 @@ https://juls07.dev/blog/running-bittorent-webserver
                     </description>
                     <link>https://juls07.dev/blog/day-14-100DaysOfGameDev</link>
                     <guid isPermaLink="false">b198ee5abd7a7b67e6f2b96fd3dca075</guid>
+                    <pubDate>Fri, 8 Oct 2021 20:44:00 CST</pubDate>
                 </item>
             </channel>
         </rss>
