@@ -14,7 +14,7 @@
             <title>Why I chose archlinux</title>
             <description>
                 <div>
-                    <img src="https://juls07.dev/images/archlinux.png" style="width: 100%;">
+                  <img src="https://juls07.dev/images/archlinux.png" style="width: 100%;"></img>
                         <div>Juls07 is a game developer, web developer and pixel artist.</div>
                     </div>
                 </description>
@@ -27,7 +27,7 @@
                 <title>Running a qbittorrent webserver!</title>
                 <description>
                     <div>
-                        <img src="https://juls07.dev/images/qbittorrent-web.png" style="width: 100%;">
+                        <img src="https://juls07.dev/images/qbittorrent-web.png" style="width: 100%;"></img>
                             <div>Juls07 is a game developer, web developer and pixel artist.</div>
                         </div>
                     </description>
