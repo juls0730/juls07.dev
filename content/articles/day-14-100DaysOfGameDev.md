@@ -1,7 +1,6 @@
 ---
 title: Day 14 of 100 Days of Game dev
 description: what I did on day 14 of 100 Days of Game dev!
-img: null
 alt: my first blog post
 writer: juls07
 ---

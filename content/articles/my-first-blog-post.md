@@ -1,7 +1,6 @@
 ---
 title: My First Blog Post
 description: Learning how to use @nuxt/content to create a blog
-img: null
 alt: my first blog post
 writer: juls07
 ---
