@@ -9,7 +9,7 @@
             {{ article.description }}
           </p>
           <p class="dark:text-gray-500 text-gray-600 pb-5">
-            {{ formatDate(article.createdAt) }} | {{ article.writer }}
+            {{ article.pubdate }} | {{ article.writer }}
           </p>
           <div v-if="article.img">
             <img :src="article.img" :alt="article.alt" />

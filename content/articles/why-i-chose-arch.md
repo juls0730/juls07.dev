@@ -4,6 +4,7 @@ description: All of my reasons for choosing archlinux
 img: /images/archlinux.png
 alt: why I chose arch
 writer: juls07
+pubdate: 7 Mar, 2022
 tags:
   - Linux
   - archlinux
