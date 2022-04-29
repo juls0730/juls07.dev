@@ -78,8 +78,7 @@ export default {
       { property: "og:url", content: "https://juls07.dev" },
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-      { rel: "stylesheet", type: "text/css", href: "/main.css" },
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }
     ],
   },
 };

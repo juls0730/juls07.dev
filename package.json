@@ -18,21 +18,19 @@
     "nuxt": "^2.15.7"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.14.7",
-    "@nuxtjs/eslint-config": "^6.0.1",
-    "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/tailwindcss": "^4.2.0",
     "@vue/test-utils": "^1.2.1",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^27.0.5",
-    "eslint": "^7.29.0",
-    "eslint-plugin-nuxt": "^2.0.0",
-    "eslint-plugin-vue": "^7.12.1",
     "fibers": "^5.0.0",
     "jest": "^27.0.5",
     "postcss": "^8.3.5",
     "sass": "^1.44.0",
     "sass-loader": "10",
-    "vue-jest": "^3.0.4"
+    "vue-jest": "^3.0.4",
+    "css-what": "^5.0.1",
+    "glob-parent": "^5.1.2",
+    "unset-value": "^2.0.0",
+    "nth-check": "^2.0.1"
   }
 }
