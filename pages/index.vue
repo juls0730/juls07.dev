@@ -93,7 +93,7 @@ export default {
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }
     ],
     script: [
-      { src: 'js/base64.js', type: 'text/javascript', body: true, defer: true}
+      { src: 'js/base64.js', type: 'text/javascript', defer: true}
     ]
   },
 };
