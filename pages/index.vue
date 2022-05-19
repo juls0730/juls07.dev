@@ -11,7 +11,7 @@
         been programming since I was 10 years old, I am a skilled developer in
         html, vue, Java, JavaScript, ruby, and C#. It's so amazing to me that
         you can write code to tell a computer to do anything! I also have a
-        <a class="socails-link" href="github.com/juls0730">Github</a> and a
+        <a class="socials-link" href="github.com/juls0730">Github</a> and a
         <a class="socials-link" href="twitter.com/julie4055_">Twitter</a> so
         feel free to follow me if you want, and if you want to get in touch contact me at <span id='emailencoded'>anVsczA3QGp1bHMwNy5kZXY=</span>
       </p>
