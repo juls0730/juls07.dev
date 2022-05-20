@@ -13,7 +13,7 @@
         you can write code to tell a computer to do anything! I also have a
         <a class="socials-link" href="github.com/juls0730">Github</a> and a
         <a class="socials-link" href="twitter.com/julie4055_">Twitter</a> so
-        feel free to follow me if you want, and if you want to get in touch contact me at <span id='emailencoded'>anVsczA3QGp1bHMwNy5kZXY=</span>
+        feel free to follow me if you want, and if you want to get in touch contact me at <a href='mailto:juls07@juls07.dev'>juls07@juls07.dev</a>
       </p>
     </div>
     <div>
@@ -91,9 +91,6 @@ export default {
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }
-    ],
-    script: [
-      { src: 'js/base64.js', type: 'text/javascript', defer: true}
     ]
   },
 };
