@@ -1,5 +1,5 @@
-const emailencoded = document.getElementById('emailencoded')
-let encodedtext = emailencoded.textContent
-let decodedtext = atob(encodedtext)
+const emailencode = document.getElementById('emailencoded')
+const encodedtex = emailencode.textContent
+const decodedtex = atob(encodedtex)
 
-emailencoded.innerHTML = '<a class="socials-link" href=mailto:' + decodedtext + '>' + decodedtext + '</a>'
+emailencode.innerHTML = '<a class="socials-link" href=mailto:' + decodedtex + '>' + decodedtex + '</a>'
