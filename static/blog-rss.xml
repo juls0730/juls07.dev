@@ -37,26 +37,15 @@ https://juls07.dev/blog/running-bittorent-webserver
                     <pubDate>Mon, 7 Mar 2022 11:42:00 CST</pubDate>
                 </item>
                 <item>
-                    <title>My First Blog Post</title>
+                    <title>What I've been doing</title>
                     <description>
                         <div>
                             <div>Juls07 is a game developer, web developer and pixel artist.</div>
                         </div>
                     </description>
-                    <link>https://juls07.dev/blog/my-first-blog-post</link>
+                    <link>https://juls07.dev/blog/what-ive-been-doing</link>
                     <guid isPermaLink="false">b1dc07a69ea8313b94b06ceca9a5e222</guid>
-                    <pubDate>Fri, 8 Oct 2021 20:03:00 CST</pubDate>
-                </item>
-                <item>
-                    <title>Day 14 of 100 Days of Game dev</title>
-                    <description>
-                        <div>
-                            <div>Juls07 is a game developer, web developer and pixel artist.</div>
-                        </div>
-                    </description>
-                    <link>https://juls07.dev/blog/day-14-100DaysOfGameDev</link>
-                    <guid isPermaLink="false">b198ee5abd7a7b67e6f2b96fd3dca075</guid>
-                    <pubDate>Fri, 8 Oct 2021 20:44:00 CST</pubDate>
+                    <pubDate>Sat, 21 Mayb 2022 18:00:00 CST</pubDate>
                 </item>
             </channel>
         </rss>
