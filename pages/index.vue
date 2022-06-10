@@ -81,7 +81,7 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: "Juls07 is a game developer, web developer and pixel artist.",
+        content: "Juls07 fullstack developer.",
       },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "/og.png" },
