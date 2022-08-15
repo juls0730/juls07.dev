@@ -8534,6 +8534,11 @@
   dependencies:
     "find-up" "^4.0.0"
 
+"plausible-tracker@^0.3.4":
+  "integrity" "sha512-lmOWYQ7s9KOUJ1R+YTOR3HrjdbxIS2Z4de0P/Jx2dQPteznJl2eX3tXxKClpvbfyGP59B5bbhW8ftN59HbbFSg=="
+  "resolved" "https://registry.npmjs.org/plausible-tracker/-/plausible-tracker-0.3.8.tgz"
+  "version" "0.3.8"
+
 "pnp-webpack-plugin@^1.6.4":
   "integrity" "sha512-2Rb3vm+EXble/sMXNSu6eoBx8e79gKqhNq9F5ZWW6ERNCTE/Q0wQNne5541tE5vKjfM8hpNCYL+LGc1YTfI0dg=="
   "resolved" "https://registry.npmjs.org/pnp-webpack-plugin/-/pnp-webpack-plugin-1.7.0.tgz"
@@ -11612,6 +11617,13 @@
   "integrity" "sha512-ZMjqRpWabMPqPc7gIrG0Nw6vRf1+itwf0Itft7LbMXs2g3Zs/NFmevjZGN1x7K3Q95GmIjWbQZTVerxiBxI+0g=="
   "resolved" "https://registry.npmjs.org/vue-no-ssr/-/vue-no-ssr-1.1.1.tgz"
   "version" "1.1.1"
+
+"vue-plausible@^1.3.2":
+  "integrity" "sha512-7hdLrDjw0+qjdM9hxowOirQSHPCljWwd8scW0tRFHyXAQSE/yBWrJ3EPuEiZlJUoth9ac0KLbHM+wSSkWHttiA=="
+  "resolved" "https://registry.npmjs.org/vue-plausible/-/vue-plausible-1.3.2.tgz"
+  "version" "1.3.2"
+  dependencies:
+    "plausible-tracker" "^0.3.4"
 
 "vue-router@^3.5.1":
   "integrity" "sha512-FUlILrW3DGitS2h+Xaw8aRNvGTwtuaxrRkNSHWTizOfLUie7wuYwezeZ50iflRn8YPV5kxmU2LQuu3nM/b3Zsg=="

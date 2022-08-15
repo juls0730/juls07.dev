@@ -23,8 +23,13 @@ export default {
   buildModules: [
     //'@nuxtjs/google-analytics',
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    'vue-plausible'
   ],
+
+  plausible: { // Use as fallback if no runtime config is available at runtime
+    domain: 'juls07.dev'
+  },
 
   /*googleAnalytics: {
     id: 'UA-183042760-3',
