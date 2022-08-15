@@ -2,6 +2,16 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  head: {
+    script: [
+      {
+        src: "https://plausible.io/js/plausible.js",
+        data-domain: "Juls07.dev",
+        defer: true
+      },
+    ],
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   server: {
     port: 8000,
