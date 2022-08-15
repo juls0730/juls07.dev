@@ -15,12 +15,12 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   server: {
     port: 8000,
-    host: '0.0.0.0'
+    host: '0.0.0.0',
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '~/assets/css/main.css'
+    '~/assets/css/main.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -34,11 +34,11 @@ export default {
     //'@nuxtjs/google-analytics',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    'vue-plausible'
+    'vue-plausible',
   ],
 
   plausible: { // Use as fallback if no runtime config is available at runtime
-    domain: 'juls07.dev'
+    domain: 'juls07.dev',
   },
 
   /*googleAnalytics: {
