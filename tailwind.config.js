@@ -1,7 +1,14 @@
+/** @type {import('tailwindcss').Config} */
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  purge: [],
+  content: [
+    "./components/**/*.{js,vue,ts}",
+    "./layouts/**/*.vue",
+    "./pages/**/*.vue",
+    "./plugins/**/*.{js,ts}",
+    "./nuxt.config.{js,ts}",
+  ],
   darkMode: 'media',
   theme: {
     screens: {
@@ -15,7 +22,7 @@ module.exports = {
         'main': '#eb2058',
         'secondary': '#fb9069'
       },
-      gray: colors.gray,
+      gray: colors.zinc,
       white: colors.white
     }
   },
@@ -25,9 +32,8 @@ module.exports = {
   tailwindcss: {
     cssPath: '~/assets/CSS/tailwind.css',
     configPath: 'tailwind.config.js',
-    jit: true,
     exposeConfig: false,
     config: {}
   },
-  plugins: [require('@tailwindcss/typography')]
+  plugins: []
 }

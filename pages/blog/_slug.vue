@@ -152,7 +152,7 @@ h3 {
   @apply dark:bg-gray-800;
 }
 .nuxt-content-highlight .filename {
-  @apply absolute right-0 text-gray-700 font-light z-10 mr-2 mt-1 text-sm;
+  @apply absolute right-0 text-gray-600 font-light z-10 mr-2 mt-1 text-sm;
   @apply dark:text-white;
 }
 pre[class*="language-"].line-numbers {
