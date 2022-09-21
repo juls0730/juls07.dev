@@ -9,7 +9,6 @@ module.exports = {
     "./plugins/**/*.{js,ts}",
     "./nuxt.config.{js,ts}",
   ],
-  darkMode: 'media',
   theme: {
     screens: {
       sm: '640px',
@@ -25,15 +24,6 @@ module.exports = {
       gray: colors.zinc,
       white: colors.white
     }
-  },
-  variants: {
-    extend: {}
-  },
-  tailwindcss: {
-    cssPath: '~/assets/CSS/tailwind.css',
-    configPath: 'tailwind.config.js',
-    exposeConfig: false,
-    config: {}
   },
   plugins: []
 }
