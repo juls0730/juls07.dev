@@ -1,23 +1,23 @@
 <template>
-  <div>
+  <div v-if="!article.draft">
     <Nav />
-    <div class="md:flex md:justify-center block">
+    <div class="block md:flex md:justify-center">
       <div class="blog-content">
         <article>
           <h1>{{ article.title }}</h1>
-          <p class="dark:text-gray-500 text-gray-600 pb-1">
+          <p class="pb-1 text-gray-600 dark:text-gray-500">
             {{ article.description }}
           </p>
-          <p class="dark:text-gray-500 text-gray-600 pb-5">
+          <p class="pb-5 text-gray-600 dark:text-gray-500">
             {{ article.pubdate }} | {{ article.writer }}
           </p>
           <div v-if="article.img">
             <img :src="article.img" :alt="article.alt" />
           </div>
-          <ul v-if="article.tags" class="pl-0 flex space-x-3 mt-2">
+          <ul v-if="article.tags" class="flex pl-0 mt-2 space-x-3">
             <li
               v-for="tag in article.tags"
-              class="text-gray-400 font-bold"
+              class="font-bold text-gray-400"
               :key="tag"
             >
               {{ tag }}

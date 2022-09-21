@@ -2,8 +2,8 @@
   <div>
     <Nav />
     <div class="grid-container">
-      <div v-for="article in articles" :key="article.title" class="mb-5 px-1.5">
-        <div class="dark:bg-gray-800 text-white rounded-lg grid-item">
+      <div v-for="article in articles" v-if="!article.draft" :key="article.title" class="mb-5 px-1.5">
+        <div class="text-white rounded-lg dark:bg-gray-800 grid-item">
           <img v-if="article.img" :src="article.img" class="w-full blog-post-img" />
           <div class="p-3">
             <h3>
@@ -11,15 +11,15 @@
                 {{ article.title }}
               </nuxt-link>
             </h3>
-            <p class="dark:text-gray-500 text-gray-600">
+            <p class="text-gray-600 dark:text-gray-500">
               {{ article.pubdate }} | {{ article.writer }}
             </p>
-            <p class="dark:text-gray-400 text-gray-400">
+            <p class="text-gray-400 dark:text-gray-400">
               {{ article.description }}
             </p>
             <nuxt-content
               :document="article"
-              class="excerpt-text text-overflow dark:text-gray-200 text-gray-900"
+              class="text-gray-900 excerpt-text text-overflow dark:text-gray-200"
             />
           </div>
         </div>
@@ -78,3 +78,4 @@ export default {
   @apply text-brand-secondary;
   @apply hover:underline;
 }
+</style>
