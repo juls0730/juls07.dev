@@ -122,11 +122,6 @@ ul {
   list-style: revert !important;
 }
 
-body {
-  font-family: "Roboto", sans-serif;
-  @apply dark:bg-gray-800;
-  @apply dark:text-white;
-}
 h1 {
   @apply text-4xl;
   @apply font-semibold;
