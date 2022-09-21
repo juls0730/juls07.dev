@@ -146,6 +146,14 @@ h3 {
   @apply rounded-xl;
   @apply dark:bg-gray-800;
 }
+
+
+@media (prefers-color-scheme: dark) {
+  .nuxt-content-highlight {
+    background-color: rgb(39 39 42 / var(--tw-bg-opacity));
+  }
+}
+
 .nuxt-content-highlight .filename {
   @apply absolute right-0 text-gray-600 font-light z-10 mr-2 mt-1 text-sm;
   @apply dark:text-white;
