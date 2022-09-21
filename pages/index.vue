@@ -79,12 +79,6 @@ export default {
 </script>
 
 <style>
-body {
-  font-family: "Roboto", sans-serif;
-  @apply dark:bg-gray-800;
-  @apply dark:text-white;
-}
-
 .header {
   @apply text-5xl;
   @apply md:text-7xl;
