@@ -73,7 +73,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .article-link {
   @apply text-brand-secondary;
   @apply hover:underline;

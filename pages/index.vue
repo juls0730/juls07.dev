@@ -78,7 +78,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .header {
   @apply text-5xl;
   @apply md:text-7xl;

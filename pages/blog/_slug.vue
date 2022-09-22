@@ -98,11 +98,7 @@ export default {
 };
 </script>
 
-<style>
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+<style lang="scss">
 li {
   list-style-type: none;
 }
