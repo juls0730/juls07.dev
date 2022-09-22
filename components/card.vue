@@ -1,10 +1,10 @@
 <template>
-  <div class="bg-white border-2 border-white shadow-xl rounded-xl dark:border-gray-800 dark:bg-gray-800">
+  <div class="bg-white border-2 border-white shadow-xl rounded-xl dark:border-zinc-800 dark:bg-zinc-800">
       <div class="flex flex-col h-full p-2">
           <h2 class="mt-2 text-2xl font-semibold">
               {{ name }}
           </h2>
-          <p class="block mt-2 text-gray-600 dark:text-gray-300">
+          <p class="block mt-2 text-zinc-600 dark:text-zinc-300">
               {{ description }}
           </p>
           <div class="flex items-end justify-end w-full pl-2 mt-auto h-fit">

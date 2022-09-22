@@ -1,16 +1,16 @@
 <template>
   <nav>
     <div class="p-7">
-      <div class="hidden md:block md:ml-1 md:pr-4 md:space-x-5 text-gray-900 dark:text-gray-50">
+      <div class="hidden md:block md:ml-1 md:pr-4 md:space-x-5 text-zinc-900 dark:text-zinc-50">
         <router-link
-          class="font-semibold text-gray-900 dark:text-gray-50 hover:underline"
+          class="font-semibold text-zinc-900 dark:text-zinc-50 hover:underline"
           to="/"
         >
           Home
         </router-link>
 
         <router-link
-          class="font-semibold text-gray-900 dark:text-gray-50 hover:underline"
+          class="font-semibold text-zinc-900 dark:text-zinc-50 hover:underline"
           to="/blogs"
         >
           My Blog
@@ -23,7 +23,7 @@
         for="menu-toggle"
         class="cursor-pointer py-0.5 lg:hidden block"
           ><svg
-            class="fill-current cursor-pointer dark:text-white text-gray-900"
+            class="fill-current cursor-pointer dark:text-white text-zinc-900"
             xmlns="http://www.w3.org/2000/svg"
             width="20"
             height="20"
@@ -35,18 +35,18 @@
         <input id="menu-toggle" class="hidden cursor-pointer" type="checkbox" />
 
         <div id="menu" class="hidden">
-          <ul class="text-base text-gray-900 dark:text-gray-50">
-            <li class="inline-list text-gray-900 dark:text-gray-50">
+          <ul class="text-base text-zinc-900 dark:text-zinc-50">
+            <li class="inline-list text-zinc-900 dark:text-zinc-50">
               <router-link
-                class="px-0 block font-semibold hover:underline text-gray-900 dark:text-gray-50"
+                class="px-0 block font-semibold hover:underline text-zinc-900 dark:text-zinc-50"
                 to="/"
               >
                 Home
               </router-link>
             </li>
-            <li class="inline-list text-gray-900 dark:text-gray-50">
+            <li class="inline-list text-zinc-900 dark:text-zinc-50">
               <router-link
-                class="px-0 block font-semibold hover:underline text-gray-900 dark:text-gray-50"
+                class="px-0 block font-semibold hover:underline text-zinc-900 dark:text-zinc-50"
                 to="/blogs"
               >
                 My Blog
