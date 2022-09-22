@@ -12,7 +12,7 @@ ol, ul {
 }
 
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif !important;
     @apply dark:bg-zinc-800;
     @apply dark:text-white;
 }
