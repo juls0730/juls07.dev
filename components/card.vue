@@ -1,44 +1,51 @@
 <template>
-  <div class="rounded-xl shadow-xl border-2 border-white dark:border-gray-800 bg-white dark:bg-gray-800">
-    <div class="p-2 h-full">
-      <h2 class="text-2xl mt-2 font-semibold">
-        {{ name }}
-      </h2>
-      <p class="mt-2 block text-gray-600 dark:text-gray-300">
-        {{ description }}
-      </p>
-      <div v-if="link1 && link2" class="mt-2 pb-1">
-        <a :href="link1">
-          <button class="button rounded-l">
-            {{ button1 }}
-          </button>
-        </a>
-        <a :href="link2">
-          <button class="button rounded-r">
-            {{ button2 }}
-          </button>
-        </a>
+  <div class="bg-white border-2 border-white shadow-xl rounded-xl dark:border-gray-800 dark:bg-gray-800">
+      <div class="flex flex-col h-full p-2">
+          <h2 class="mt-2 text-2xl font-semibold">
+              {{ name }}
+          </h2>
+          <p class="block mt-2 text-gray-600 dark:text-gray-300">
+              {{ description }}
+          </p>
+          <div class="flex items-end justify-end w-full pl-2 mt-auto h-fit">
+              <div v-if="link1 && link2"
+                  class="pb-1 mt-2">
+                  <a :href="link1">
+                      <button class="rounded-l button">
+                          {{ button1 }}
+                      </button>
+                  </a>
+                  <a :href="link2">
+                      <button class="rounded-r button">
+                          {{ button2 }}
+                      </button>
+                  </a>
+              </div>
+              <div v-if="link1 && !link2"
+                  class="pb-1 mt-2">
+                  <a :href="link1">
+                      <button class="rounded button">
+                          {{ button1 }}
+                      </button>
+                  </a>
+              </div>
+              <div v-if="!link1 && link2"
+                  class="pb-1 mt-2">
+                  <a :href="link2">
+                      <button class="rounded button">
+                          {{ button2 }}
+                      </button>
+                  </a>
+              </div>
+              <div v-if="!link1 && !link2"
+                  class="pb-1 mt-2">
+                  <p v-if="!link1 && !link2"
+                      class="pr-1 font-semibold">
+                      Coming Soon!
+                  </p>
+              </div>
+          </div>
       </div>
-      <div v-if="link1 && !link2" class="mt-2 float-right pb-1">
-        <a :href="link1">
-          <button class="button rounded">
-            {{ button1 }}
-          </button>
-        </a>
-      </div>
-      <div v-if="!link1 && link2" class="mt-2 float-right pb-1">
-        <a :href="link2">
-          <button class="button rounded">
-            {{ button2 }}
-          </button>
-        </a>
-      </div>
-      <div v-if="!link1 && !link2" class="mt-2 float-right pb-1">
-        <p v-if="!link1 && !link2" class="font-semibold pr-1">
-          Coming Soon!
-        </p>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -51,11 +58,16 @@ export default {
 </script>
 
 <style>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .button {
   @apply bg-brand-main;
   @apply text-white;
   @apply font-semibold;
-  @apply hover:text-white;
+  @apply transition-all;
+  @apply duration-300;
   @apply py-2;
   @apply px-4;
   @apply border;

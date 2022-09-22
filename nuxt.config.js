@@ -20,7 +20,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '~/assets/css/main.css',
+    '~/assets/css/main.scss',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -34,12 +34,7 @@ export default {
     //'@nuxtjs/google-analytics',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    'vue-plausible',
   ],
-
-  plausible: { // Use as fallback if no runtime config is available at runtime
-    domain: 'juls07.dev',
-  },
 
   /*googleAnalytics: {
     id: 'UA-183042760-3',
