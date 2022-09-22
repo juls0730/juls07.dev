@@ -86,5 +86,7 @@ sw.*
 # macOS
 .DS_Store
 
+package-lock.json
+
 # Vim swap files
 *.swp

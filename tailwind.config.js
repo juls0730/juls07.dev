@@ -10,19 +10,21 @@ module.exports = {
     "./nuxt.config.{js,ts}",
   ],
   theme: {
-    screens: {
-      sm: '640px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1280px'
-    },
-    colors: {
-      'brand': {
-        'main': '#eb2058',
-        'secondary': '#fb9069'
+    extend: {
+      screens: {
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px'
       },
-      gray: colors.zinc,
-      white: colors.white
+      colors: {
+        'brand': {
+          'main': '#eb2058',
+          'secondary': '#fb9069'
+        },
+        gray: colors.zinc,
+        white: colors.white
+      }
     }
   },
   plugins: []
