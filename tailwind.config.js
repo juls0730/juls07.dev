@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const colors = require('tailwindcss/colors')
+const colors = require('tailwindcss/colors');
 
 module.exports = {
   content: [
@@ -23,10 +23,10 @@ module.exports = {
           'main': '#eb2058',
           'secondary': '#fb9069'
         },
-        gray: colors.zinc,
+        zinc: colors.gray,
         white: colors.white
       }
-    }
+    },
   },
   plugins: []
 }

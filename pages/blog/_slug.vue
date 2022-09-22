@@ -5,10 +5,10 @@
       <div class="blog-content">
         <article>
           <h1>{{ article.title }}</h1>
-          <p class="pb-1 text-gray-600 dark:text-gray-500">
+          <p class="pb-1 text-zinc-600 dark:text-zinc-500">
             {{ article.description }}
           </p>
-          <p class="pb-5 text-gray-600 dark:text-gray-500">
+          <p class="pb-5 text-zinc-600 dark:text-zinc-500">
             {{ article.pubdate }} | {{ article.writer }}
           </p>
           <div v-if="article.img">
@@ -18,7 +18,7 @@
           <ul v-if="article.tags"
             class="flex pl-0 mt-2 space-x-3">
             <li v-for="tag in article.tags"
-              class="font-bold text-gray-400"
+              class="font-bold text-zinc-400"
               :key="tag">
               {{ tag }}
             </li>
@@ -162,8 +162,8 @@ h3 {
 }
 
 .nuxt-content-highlight .filename {
-  @apply absolute right-0 text-gray-600 font-light z-10 mr-2 mt-1 text-sm;
-  @apply dark:text-gray-200;
+  @apply absolute right-0 text-zinc-600 font-light z-10 mr-2 mt-1 text-sm;
+  @apply dark:text-zinc-200;
 }
 
 pre[class*="language-"].line-numbers {
