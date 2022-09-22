@@ -58,6 +58,10 @@ export default {
 </script>
 
 <style>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .button {
   @apply bg-brand-main;
   @apply text-white;

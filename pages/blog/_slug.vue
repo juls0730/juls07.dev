@@ -99,6 +99,10 @@ export default {
 </script>
 
 <style>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 li {
   list-style-type: none;
 }
