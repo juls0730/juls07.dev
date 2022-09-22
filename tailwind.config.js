@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-import colors from 'tailwindcss/colors'
+const colors = require('tailwindcss/colors');
 
 module.exports = {
   content: [
@@ -9,7 +9,6 @@ module.exports = {
     "./plugins/**/*.{js,ts}",
     "./nuxt.config.{js,ts}",
   ],
-  darkMode: 'media',
   theme: {
     extend: {
       screens: {
@@ -26,7 +25,7 @@ module.exports = {
         gray: colors.zinc,
         white: colors.white
       }
-    }
+    },
   },
   plugins: []
 }
