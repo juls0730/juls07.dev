@@ -163,7 +163,7 @@ h3 {
 
 .nuxt-content-highlight .filename {
   @apply absolute right-0 text-gray-600 font-light z-10 mr-2 mt-1 text-sm;
-  @apply dark:text-white;
+  @apply dark:text-gray-200;
 }
 
 pre[class*="language-"].line-numbers {
