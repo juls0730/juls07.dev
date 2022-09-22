@@ -23,7 +23,7 @@ module.exports = {
           'main': '#eb2058',
           'secondary': '#fb9069'
         },
-        gray: colors.zinc,
+        zinc: colors.gray,
         white: colors.white
       }
     },
