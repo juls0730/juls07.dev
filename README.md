@@ -1,3 +1,5 @@
+This repo has been archived in favor of [juls07.dev-v2](https://github.com/juls0730/juls07.dev-v2)
+
 # Setup
 first clone the repo\
 `git clone https://github.com/juls0730/juls07.dev`\
