@@ -1,31 +1,26 @@
 <template>
-	<div
-		class="container my-2 bg-neutral-900">
-		<span v-if="filename"
-			class="filename-text text-xs leading-none tracking-tight text-gray-400 font-jetbrains">
+	<div class="container my-2 dark:bg-[#1d1b1d] bg-[hsl(270,26.89%,94.47%)]">
+		<span v-if="filename" class="filename-text text-xs leading-none tracking-tight text-gray-400 font-jetbrains">
 			{{ filename }}
 		</span>
-			<slot />
+		<slot />
 		<div class="bottom-container">
 			<div class="copy-container">
-				<button class="rounded hover:bg-zinc-800/60 transition-colors duration-200 flex p-1"
+				<button
+					class="rounded hover:bg-zinc-300/70 dark:hover:bg-zinc-800/60 transition-colors duration-200 flex p-1"
 					@click="copy(code)" @keypress.space="copy(code)">
-					<div class="h-6"
-						v-if="copied">
-						<Icon size="24"
-							name="tabler:check" />
+					<div class="h-6" v-if="copied">
+						<Icon size="24" name="tabler:check" />
 					</div>
-					<div class="h-6"
-						v-else>
-						<Icon size="24"
-							name="tabler:copy" />
+					<div class="h-6" v-else>
+						<Icon size="24" name="tabler:copy" />
 					</div>
 				</button>
 			</div>
 		</div>
 	</div>
 </template>
-  
+
 <script setup lang="ts">
 import { useClipboard } from '@vueuse/core';
 const { copy, copied } = useClipboard();
@@ -39,7 +34,7 @@ const props = withDefaults(
 	{ code: '', language: null, filename: null, highlights: undefined }
 );
 </script>
-  
+
 <style scoped>
 .icon {
 	display: block;

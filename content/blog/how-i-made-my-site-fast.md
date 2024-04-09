@@ -15,6 +15,7 @@ head:
     - name: 'copyright'
       content: '© 2022 juls07'
 date: 2022-05-22
+# _draft: true
 tags:
   - web dev
   - fullstack development
@@ -22,7 +23,9 @@ tags:
   - nodejs
   - redis
 ---
-So yesterday I talked about my social media site that I'm working on. Today I implemented redis, a memory store that I used to reduce requests at most by 48ms. First when I tried to use redis I just used the `redis` package off of npmjs because it only makes sense but when I tried to get a key with the name of `user-cache-[userId]` It failed for some reason, I still dont know why it failed but using the `ioredis` package and<!--more--> everything started working, not user data processing, what I used redis to cache since it's a terrible for loop that executes database requests for every post, but now it's all stored in memory. I still want to add TTL since my VPS that I intend on deploying my site on for production only has 1GB of RAM but I'm not sure how to do that. If you saw my blog post from [yesterday](/blog/what-ive-been-doing) then you'll know what my user code used to look like, now it looks like this.
+So yesterday I talked about my social media site that I'm working on. Today I implemented redis, a memory store that I used to reduce requests at most by 48ms. First when I tried to use redis I just used the `redis` package off of npmjs because it only makes sense but when I tried to get a key with the name of `user-cache-[userId]` It failed for some reason, I still dont know why it failed but using the `ioredis` package and everything started working, not user data processing, what I used redis to cache since it's a terrible for loop that executes database requests for every post, but now it's all stored in memory.
+<!--more-->
+I still want to add TTL since my VPS that I intend on deploying my site on for production only has 1GB of RAM but I'm not sure how to do that. If you saw my blog post from [yesterday](/blog/what-ive-been-doing) then you'll know what my user code used to look like, now it looks like this.
 
 ```js[post.js]
 for (let i = 0; i < replies.length; i++) {

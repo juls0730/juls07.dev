@@ -1,11 +1,10 @@
 import { defineNuxtConfig } from 'nuxt/config';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	target: 'static',
-
 	app: {
 		head: {
 			title: 'Juls07',
+
 			meta: [
 				{ charset: 'utf-8' },
 				{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -22,7 +21,46 @@ export default defineNuxtConfig({
 		},
 	},
 
-	css: ['~/assets/css/main.css'],
+	colorMode: {
+		classSuffix: ''
+	},
+
+	content: {
+		highlight: {
+			theme: {
+				dark: 'min-dark',
+				default: 'min-light'
+			},
+			preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'svelte', 'diff', 'shell', 'markdown', 'yaml', 'bash', 'ini'],
+		},
+	},
+
+	css: [
+		'@/assets/css/main.css',
+	],
+
+
+	devtools: {
+		enabled: true
+	},
+
+	experimental: {
+		payloadExtraction: true
+	},
+
+	image: {
+		provider: 'ipx'
+	},
+
+	modules: ['nuxt-icon', '@nuxt/content', '@nuxtjs/color-mode', '@nuxt/image'],
+
+	nitro: {
+		preset: 'static',
+		prerender: {
+			crawlLinks: true,
+			routes: ['/sitemap.xml', '/rss.xml']
+		},
+	},
 
 	postcss: {
 		plugins: {
@@ -31,28 +69,11 @@ export default defineNuxtConfig({
 		},
 	},
 
-	modules: ['nuxt-icon', '@nuxt/content'],
-
-	image: {
-		provider: 'ipx'
-	},
-
-	nitro: {
-		prerender: {
-			crawlLinks: true,
-			routes: ['/sitemap.xml', '/rss.xml']
-		},
-		experimental: {
-			payloadExtraction: true
+	router: {
+		options: {
+			strict: false
 		}
 	},
 
-	content: {
-		highlight: {
-			theme: {
-				default: 'github-dark'
-			},
-			preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'svelte', 'diff', 'shell', 'markdown', 'yaml', 'bash', 'ini'],
-		},
-	},
+	sourcemap: false,
 })

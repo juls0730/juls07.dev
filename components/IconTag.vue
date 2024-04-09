@@ -1,10 +1,8 @@
 <template>
     <div :aria-label="name"
-        class="font-inter md:text-lg w-fit max-h-9 min-w-fit bg-zinc-800 border border-zinc-700/30 py-1 px-2 rounded shadow flex items-center"
-        :class="(isTag) ? 'select-none' : 'select-text'"
-        :style="(size) ? 'font-size: ' + size + 'px;' : ''">
-        <Icon :size="(size) ? size : '20'"
-            class="mr-2"
+        class="font-inter md:text-lg w-fit max-h-9 min-w-fit dark:bg-obsidian-night bg-[hsl(270,68%,95.47%)] border border-soft-lilac dark:border-midnight-slate/30 py-1 px-2 rounded shadow flex items-center"
+        :class="(isTag) ? 'select-none' : 'select-text'" :style="(size) ? 'font-size: ' + size + 'px;' : ''">
+        <Icon :size="(size) ? size : '20'" class="mr-2"
             :name="(isTag) ? ('logos:' + (tagMap[iconName.toLowerCase().split(' ').join('-')] || iconName.toLowerCase())) : iconName" />
         {{ name }}
     </div>
@@ -12,7 +10,7 @@
 
 <style scoped>
 .font-inter {
-	font-family: 'Inter', arial, helvetica, sans-serif;
+    font-family: 'Inter', arial, helvetica, sans-serif;
 }
 </style>
 
