@@ -6,58 +6,51 @@ if (new Date(today.getFullYear() + "-07-30") > today) {
 	age--;
 }
 
+let tagLine = ref("");
+let typeStatus = ref(false);
+let displayTextArray = ["Fullstack dev", "Designer", "Blogger", "Freelancer"];
+let displayTextArrayIndex = ref(0);
+let charIndex = ref(0);
+
+const typeText = () => {
+	if (charIndex.value < displayTextArray[displayTextArrayIndex.value].length) {
+		if (!typeStatus.value) typeStatus.value = true;
+		tagLine.value += displayTextArray[displayTextArrayIndex.value].charAt(
+			charIndex.value
+		);
+		charIndex.value += 1;
+		setTimeout(typeText, 100);
+	} else {
+		typeStatus.value = false;
+		setTimeout(eraseText, Math.min(Math.floor(Math.random() * 2001), 1750));
+	}
+}
+
+const eraseText = () => {
+	if (charIndex.value > 0) {
+		if (!typeStatus.value) typeStatus.value = true;
+		tagLine.value = displayTextArray[displayTextArrayIndex.value].substring(
+			0,
+			charIndex.value - 1
+		);
+		charIndex.value -= 1;
+		setTimeout(eraseText, 50);
+	} else {
+		typeStatus.value = false;
+		displayTextArrayIndex.value += 1;
+		if (displayTextArrayIndex.value >= displayTextArray.length)
+			displayTextArrayIndex.value = 0;
+		setTimeout(typeText, 1100);
+	}
+}
+
+onMounted(() => {
+	setTimeout(typeText, 2200);
+})
+
 useHead({
 	title: 'Juls07',
 })
-</script>
-
-<script lang="ts">
-export default {
-	data: () => {
-		return {
-			tagLine: "",
-			typeStatus: false,
-			displayTextArray: ["Fullstack dev", "Designer", "Blogger", "Freelancer"],
-			displayTextArrayIndex: 0,
-			charIndex: 0,
-		};
-	},
-	methods: {
-		typeText() {
-			if (this.charIndex < this.displayTextArray[this.displayTextArrayIndex].length) {
-				if (!this.typeStatus) this.typeStatus = true;
-				this.tagLine += this.displayTextArray[this.displayTextArrayIndex].charAt(
-					this.charIndex
-				);
-				this.charIndex += 1;
-				setTimeout(this.typeText, 100);
-			} else {
-				this.typeStatus = false;
-				setTimeout(this.eraseText, Math.min(Math.floor(Math.random() * 2001), 1750));
-			}
-		},
-		eraseText() {
-			if (this.charIndex > 0) {
-				if (!this.typeStatus) this.typeStatus = true;
-				this.tagLine = this.displayTextArray[this.displayTextArrayIndex].substring(
-					0,
-					this.charIndex - 1
-				);
-				this.charIndex -= 1;
-				setTimeout(this.eraseText, 50);
-			} else {
-				this.typeStatus = false;
-				this.displayTextArrayIndex += 1;
-				if (this.displayTextArrayIndex >= this.displayTextArray.length)
-					this.displayTextArrayIndex = 0;
-				setTimeout(this.typeText, 1100);
-			}
-		},
-	},
-	created() {
-		setTimeout(this.typeText, 2200);
-	},
-}
 </script>
 
 <template>

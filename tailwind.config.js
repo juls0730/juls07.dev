@@ -22,7 +22,7 @@ module.exports = {
         'deep-indigo': '#393041',
         'midnight-slate': '#2F353D',
         'obsidian-night': '#131316',
-        'soft-lilac': '#E4DDEE',
+        'soft-lilac': '#DCD6E6',
       },
       screens: {
         'xs': '512px',

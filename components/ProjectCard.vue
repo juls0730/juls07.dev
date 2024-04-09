@@ -11,11 +11,11 @@ export default {
 			<Icon size="64" class="text-sea-green" :name="headerIcon" />
 			<div class="ml-auto flex">
 				<a v-if="githubLink" :href="githubLink" :aria-label="`${name}'s Gtihub`"
-					class="dark:text-zinc-300/80 text-deep-indigo/75 dark:hover:text-zinc-200 hover:text-deep-indigo/95 dark:focus:text-zinc-200 focus:text-deep-indigo/95 rounded transition-colors duration-300 focus:outline-3 focus:outline focus:outline-fuschia">
+					class="dark:!text-zinc-300/80 !text-deep-indigo/75 dark:hover:!text-zinc-200 hover:!text-deep-indigo/95 dark:focus:!text-zinc-200 focus:!text-deep-indigo/95 rounded transition-colors duration-300 focus:outline-3 focus:outline focus:outline-fuschia">
 					<Icon size="38" name="tabler:brand-github" />
 				</a>
 				<a v-if="externalLink" :href="externalLink"
-					class="dark:text-zinc-300/80 text-deep-indigo/75 dark:hover:text-zinc-200 hover:text-deep-indigo/95 dark:focus:text-zinc-200 focus:text-deep-indigo/95 rounded transition-colors duration-300 focus:outline-3 focus:outline focus:outline-fuschia">
+					class="dark:!text-zinc-300/80 !text-deep-indigo/75 dark:hover:!text-zinc-200 hover:!text-deep-indigo/95 dark:focus:!text-zinc-200 focus:!text-deep-indigo/95 rounded transition-colors duration-300 focus:outline-3 focus:outline focus:outline-fuschia">
 					<Icon size="38" name="tabler:external-link" />
 				</a>
 			</div>
