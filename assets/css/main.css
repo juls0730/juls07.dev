@@ -8,6 +8,24 @@
 html,
 body {
 	@apply bg-soft-lavender dark:bg-midnight text-deep-indigo dark:text-white;
+    scroll-behavior: smooth;
+}
+
+/* make scroll bars dark in dark mode */
+html {
+    color-scheme: normal;
+}
+
+html.dark {
+    color-scheme: dark;
+}
+
+button {
+    @apply hover:dark:bg-[#1E1F1E] hover:bg-[#E5E6E5]/80 flex items-center h-fit p-[2px] rounded;
+}
+
+hr {
+    @apply text-deep-indigo dark:text-white;
 }
 
 .font-jetbrains {

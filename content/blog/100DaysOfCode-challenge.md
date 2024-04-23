@@ -1,29 +1,20 @@
 ---
 title: My 100DaysOfCode Challenge
 description: A review of my 100DaysOfCode challenge
-image: 
-    src: '/images/100DaysOfCode-overview.webp'
-    alt: 'How I made my site fast'
-head:
-  meta:
-    - name: 'keywords'
-      content: 'web dev, nodejs'
-    - name: 'robots'
-      content: 'index, follow'
-    - name: 'author'
-      content: 'juls07'
-    - name: 'copyright'
-      content: '© 2022 juls07'
-date: 2023-01-01
-# _draft: true
+image:
+  src: "/images/100DaysOfCode-overview.webp"
+  alt: "How I made my site fast"
+date: January 01, 2023
 tags:
   - web dev
   - nodejs
 ---
 
-For my #100DaysOfCode challenge on [twitter](https://twitter.com/julie4055_) I decided to make a UI framework similar to vue.js (terrible idea). For day 1 it started simple with learning about reactivity, a short read of this [great blog post](https://lihautan.com/reactivity-in-web-frameworks-the-when/) by Tan Li Hau I had a basic trackable object function in the script.js file. For day 2 I had covered a few more things in the UI framework world, I had a templating system, a basic virtualDOM-like implementation, a [different reactive prop function](https://dev.to/siddharthshyniben/implementing-reactivity-from-scratch-51op) from siddharth, and we had a basic click directive working, great work so far. 
-<!--more--> 
-Day 3 and 4 are kinda lame, on day 3 I added a model directive similar to vue.js' v-model and on day 4 I changed the way templates were handled so I could have text before the template and I started trying to be like JSX (lmao), kinda lame and basic IMO. Now day 5 I learned about SPA routing, very simple routing that just changed the page link and rendered the template from the new page. Day 6-9 is more boring shit, simple things like a once attribute, an html attribute, etc etc. But on day 10 I learned about conditional rendering, this was an amazing learning experience for me, it taught me loads about recursive functions and how recursive functions should be used.  skipping over day 11 because I added a few more directives on day 12 I made a mounted function similar to vue.js' mounted function except for the fact that it was made by me so it was terrible XD. On day 13 crazy thing happened, I decided to stop pretending to be JSX and made template files using SSR, SSR was very simple to get working, basically I just pre-rendered the page and sent the page to the client, pretty simple, but SSR would give me many more opportunities in the future of this project. skipping over day 14-20 (can you tell I was loosing motivation fast or what?) on day 21 we actually got some code gen on the server side, very simple but still pretty cool in my opinion, here's the code I shared on day 21
+For my #100DaysOfCode challenge on [twitter](https://twitter.com/julie4055_) I decided to make a UI framework similar to vue.js (terrible idea). For day 1 it started simple with learning about reactivity, a short read of this [great blog post](https://lihautan.com/reactivity-in-web-frameworks-the-when/) by Tan Li Hau I had a basic trackable object function in the script.js file. For day 2 I had covered a few more things in the UI framework world, I had a templating system, a basic virtualDOM-like implementation, a [different reactive prop function](https://dev.to/siddharthshyniben/implementing-reactivity-from-scratch-51op) from siddharth, and we had a basic click directive working, great work so far.
+
+<!--more-->
+
+Day 3 and 4 are kinda lame, on day 3 I added a model directive similar to vue.js' v-model and on day 4 I changed the way templates were handled so I could have text before the template and I started trying to be like JSX (lmao), kinda lame and basic IMO. Now day 5 I learned about SPA routing, very simple routing that just changed the page link and rendered the template from the new page. Day 6-9 is more boring shit, simple things like a once attribute, an html attribute, etc etc. But on day 10 I learned about conditional rendering, this was an amazing learning experience for me, it taught me loads about recursive functions and how recursive functions should be used. skipping over day 11 because I added a few more directives on day 12 I made a mounted function similar to vue.js' mounted function except for the fact that it was made by me so it was terrible XD. On day 13 crazy thing happened, I decided to stop pretending to be JSX and made template files using SSR, SSR was very simple to get working, basically I just pre-rendered the page and sent the page to the client, pretty simple, but SSR would give me many more opportunities in the future of this project. skipping over day 14-20 (can you tell I was loosing motivation fast or what?) on day 21 we actually got some code gen on the server side, very simple but still pretty cool in my opinion, here's the code I shared on day 21
 
 ```ts[index.ts]
 template = template.replace('<script async src="/src/entry-client.ts" type="module"></script>', '');
@@ -197,9 +188,13 @@ export function hydrateElements(appState: Reactive) {
  });
 }
 ```
+
 On day 95 I completely consolidated the hydration function to reduce the amount of loops I call to hydrate the elements on the page. On day 98 I learned about real Virtual DOMs and the advantage of virtual DOMs, this is where in the project I was telling myself "fuck it, I should completely restart the whole project later and fix all of the dirty nasty code I have written.", but I continued the project as normal knowing that completely restarting the whole project would be much more than a 1 day process. And that's it, a brief overview of my 100DaysOfCode challenge.
 <br />
+
 ## Overview
+
 In the end of this project I feel more motivated to learn more about frameworks and everything related to that, a reflection coming soon to my [twitter](https://twitter.com/julie4055_) so keep an eye out if you're interested in that, after all that I hope you enjoyed reading.
 <br/>
+
 <p class="text-xl font-extrabold"><a href="https://twitch.tv/julie4055_">To be continued...?</a></p>

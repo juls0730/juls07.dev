@@ -1,8 +1,8 @@
 <template>
     <div class="group flex mt-2">
-        <h2 :id="id" class="text-2xl">
+        <h3 :id="id" class="text-xl">
             <slot />
-        </h2>
+        </h3>
         <button @click="copy(location.origin + location.pathname + '#' + id)"
             class="dark:text-white ml-2 group-hover:opacity-100 opacity-0 transition-all">
             <div class="h-5" v-if="copied">

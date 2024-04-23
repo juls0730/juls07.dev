@@ -6,7 +6,7 @@ export default {
 
 <template>
 	<div
-		class="dark:bg-dark-slate bg-touched-lavender relative border p-6 col-span-12 sm:col-span-10 sm:col-start-2 md:col-start-auto md:col-span-6 xl:!col-span-4 h-[60vw] max-h-[425px] min-h-[375px] border-soft-lilac dark:border-midnight-slate/30 shadow-md rounded-lg">
+		class="dark:bg-dark-slate bg-touched-lavender relative border p-6 h-[60vw] max-h-[425px] min-h-[375px] border-soft-lilac dark:border-midnight-slate/30 shadow-md rounded-lg">
 		<div class="flex mb-4 items-center" v-if="headerIcon">
 			<Icon size="64" class="text-sea-green" :name="headerIcon" />
 			<div class="ml-auto flex">

@@ -1,20 +1,10 @@
 ---
 title: My nuxtjs + trpc fullstack web app
 description: My experiences with nuxtjs 3 and tRPC
-image: 
-    src: '/images/archlinux.webp'
-    alt: 'Why I chose archlinux'
-head:
-  meta:
-    - name: 'keywords'
-      content: 'web dev, fullstack development, nuxtjs, tRPC, redis'
-    - name: 'robots'
-      content: 'index, follow'
-    - name: 'author'
-      content: 'juls07'
-    - name: 'copyright'
-      content: '© 2022 juls07'
-date: 2022-09-20
+image:
+  src: "/images/archlinux.webp"
+  alt: "Why I chose archlinux"
+date: September 20, 2020
 _draft: true
 tags:
   - web dev
