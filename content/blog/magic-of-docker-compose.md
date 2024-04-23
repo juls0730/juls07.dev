@@ -2,7 +2,7 @@
 title: "The Magic of Docker Compose: Transforming Project Setups"
 description: Simplify your life with Docker Compose
 image:
-  src: "/images/100DaysOfCode-overview.webp"
+  src: "/images/magic-of-docker-compose.webp"
   alt: "How I made my site fast"
 date: April 22, 2024
 tags:
@@ -11,6 +11,8 @@ tags:
 ---
 
 In some of my recent full-stack projects, I've been using Docker Compose to simplify my project setup. Instead of downloading PostgreSQL, aligning it with the project's authentication scheme, tagging it to prevent conflicts with other projects, setting up the cache layer or other services, and building backend services, I run just one simple command:
+
+<!--more-->
 
 ```bash
 docker-compose up
