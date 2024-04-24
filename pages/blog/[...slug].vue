@@ -7,8 +7,7 @@ const location = useBrowserLocation()
 let year = new Date().getFullYear();
 
 let route = useRoute();
-// cant use "useAsyncData" here for some reason because it leads to the posts not rendering correctly
-const doc = await queryContent(route.path).findOne()
+const { data: doc } = await useAsyncData(`${route.path}-data`, () => queryContent(route.path).findOne())
 if (!doc) {
     throw createError({ statusCode: 404, statusMessage: 'Article not found', fatal: true })
 }
@@ -67,7 +66,7 @@ useHead({
     meta: [
         {
             name: "copyright",
-            content: "© ${year} juls07"
+            content: `© ${year} juls07`
         },
         {
             name: "robots",
