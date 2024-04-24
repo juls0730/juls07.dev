@@ -7,8 +7,9 @@ const location = useBrowserLocation()
 let year = new Date().getFullYear();
 
 let route = useRoute();
-const { data: doc } = await useAsyncData('blog', () => queryContent(route.path).findOne())
-if (!doc.value) {
+// cant use "useAsyncData" here for some reason because it leads to the posts not rendering correctly
+const doc = await queryContent(route.path).findOne()
+if (!doc) {
     throw createError({ statusCode: 404, statusMessage: 'Article not found', fatal: true })
 }
 
@@ -96,7 +97,8 @@ useHead({
         <Nav />
         <div class="grid grid-cols-12 gap-x-5 justify-center pt-6 mb-4 relative">
             <div class="!col-start-2 md:!col-start-3 lg:!col-start-4 lg:col-span-6 md:col-span-8 col-span-10 order-1">
-                <NuxtImg :src="doc.image.src" class="mb-2 rounded-md drop-shadow w-full" quality="80" />
+                <NuxtImg v-if="doc.image" :src="doc.image.src" class="mb-2 rounded-md drop-shadow w-full"
+                    quality="80" />
                 <h1 class="text-3xl dark:text-gray-100 md:text-4xl font-semibold mb-2">{{ doc.title }}</h1>
                 <p class="mb-1 dark:text-zinc-400 text-zinc-600">
                     {{ doc.description }}
@@ -130,14 +132,12 @@ useHead({
                         Copy Link
                     </button>
                 </div>
-                <div v-if="surround">
-                    <hr class="my-6 border-[#ECE6E7] dark:border-[#232326] border-t" />
-                    <div class="grid gap-8 grid-cols-1 sm:grid-cols-2">
-                        <MiniBlogCard v-if="surround[0]" :to="surround[0]._path" :title="surround[0].title"
-                            :description="surround[0].description" />
-                        <MiniBlogCard class="col-start-2" v-if="surround[1]" :to="surround[1]._path"
-                            :title="surround[1].title" :right-align="true" :description="surround[1].description" />
-                    </div>
+                <hr class="my-6 border-[#ECE6E7] dark:border-[#232326] border-t" />
+                <div v-if="surround" class="sm:grid gap-8 sm:grid-cols-2">
+                    <MiniBlogCard v-if="surround[0]" :to="surround[0]._path" :title="surround[0].title"
+                        :description="surround[0].description" />
+                    <MiniBlogCard class="col-start-2" v-if="surround[1]" :to="surround[1]._path"
+                        :title="surround[1].title" :right-align="true" :description="surround[1].description" />
                 </div>
             </div>
         </div>

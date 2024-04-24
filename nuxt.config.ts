@@ -69,4 +69,14 @@ export default defineNuxtConfig({
             autoprefixer: {},
         },
     },
+
+    router: {
+        options: {
+            strict: false
+        }
+    },
+
+    sourcemap: false,
+
+    ssr: true
 })
