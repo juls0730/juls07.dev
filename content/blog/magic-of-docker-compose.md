@@ -23,9 +23,9 @@ With this one command, you, your maintainers, contributors, and users can bypass
 
 ## The Why
 
-Many of my full-stack projects rely on various services. These can range from a Redis DB (rip lol) to a MySQL DB, a PostgreSQL DB, a compiled backend, or numerous other possibilities. However, setting them up can be tedious, resolving conflicts with other databases, managing missing dependencies, and ensuring the services are running. I simply want to focus on the project. While using a project, I shouldn't have to concern myself with the maintainers' choice of database, their decision to use a compiled backend or any other choices, and neither should anyone else. I find that the largest roadblock to me working on projects is dependencies, whether it’s an electron app, which is constantly in a state of dependency hell, an open-source web app, or API, I always find myself wasting time on things like dependencies, and sometimes I even lose interest in contributing to the project because of how hard it is to get the project working at all.
+Many of my full-stack projects rely on various services. These can range from a Redis DB (rip lol) to a MySQL DB, a PostgreSQL DB, a compiled backend, or numerous other possibilities. However, setting them up, resolving conflicts with other databases, managing missing dependencies, and ensuring the services are running can be tedious. I simply want to focus on the project. While using a project, I shouldn't have to concern myself with the maintainers' choice of database, their decision to use a compiled backend or any other choices, and neither should anyone else. I find that the largest roadblock to me working on a project is dependencies, whether it’s an electron app, which is constantly in a state of dependency hell, an open-source web app, or API, I always find myself wasting time on things like dependencies, and sometimes I even lose interest in contributing to the project because of how hard it is to get the project working at all.
 
-Docker Compose also hands itself to developing microservices and multi-environment production, docker containers can be easily spun up nearly on demand, and you can make guarantees about the environment that the service is running on even if you or other members of your team use Windows, thanks to Docker building on top of the Linux kernel. You and your contributors will benefit greatly once you get past the hurdle of implementing Docker Compose into your project. want to test a clean install of your app? Just delete the docker image and make a new one. Working from another computer for the time being? That’s fine, clone the repo and start the docker container. Once you use Docker Compose to manage projects, you won't be able to go back. Have you ever been in a scenario where you have an old project and you want to look back at it or work on it again, but it's poorly documented and you don't know exactly what you used and how you had it set up? Trust me, I’ve been there, and it sucks, but by using Docker Compose, I find myself going into old projects, starting up Docker Compose, and it being exactly like the day I left it.
+Docker Compose also hands itself to developing microservices and multi-environment production, docker containers can be easily spun up nearly on demand, and you can make guarantees about the environment that the service is running on even if you or other members of your team use Windows, thanks to Docker building on top of the Linux kernel. You and your contributors will benefit greatly once you get past the hurdle of implementing Docker Compose into your project. Want to test a clean install of your app? Just delete the docker image and make a new one. Working from another computer for the time being? That’s fine, clone the repo and start the docker container. Once you use Docker Compose to manage projects, you won't be able to go back. Have you ever been in a scenario where you have an old project and you want to look back at it or work on it again, but it's poorly documented and you don't know exactly what you used and how you had it set up? Trust me, I’ve been there, and it sucks, but by using Docker Compose, I find myself going into old projects, starting up Docker Compose, and it being exactly like the day I left it.
 
 ## The How
 
@@ -327,7 +327,7 @@ We must specify the correct volumes that we set in the Dockerfile to the corresp
 
     keydb:
         image: eqalpha/keydb:alpine
-        restart: always
+        restart: unless-stopped
         ports:
             - '6379:6379'
         volumes:
@@ -347,7 +347,7 @@ volumes:
 
 There are a couple things to unpack here, so let’s break it down:
 
-Both our Nginx and KeyDB service use an image that is on DockerHub, so we don't need to make the Dockerfile ourselves, instead, Docker Compose will pull the image automatically and have everything preconfigured for us, like every other image I have used in this article, I opted for the alpine images. Our KeyDB service uses an external volume defined in the volumes section at the bottom of the file so that we can have persistent data, which is important when we might have data we want to keep in databases. Furthermore, the KeyDB section has a `ports` key, which defines the ports that that container uses, and which port it should be mapped to on the host system. it’s not 100% necessary to have this port be exposed, but I like having it exposed so that I can look at the data in an external DB viewer without having to do complicated hacks to access the database in the container. Next, the KeyDB service has a key that tells it to restart always, so if it encounters a crash, or stops unexpectedly it will be restarted by docker automatically. Finally, in our Nginx service, we have a volume that points to a local file and also has `ro` at the end of it, so what gives? The local path mounts the nginx.conf file that we made previously in the article to the path that Nginx looks for the nginx config so that we can use our modified config, and the `ro` at the end of the file tells Docker to mount it as a read-only file in the container.
+Both our Nginx and KeyDB service use an image that is on DockerHub, so we don't need to make the Dockerfile ourselves, instead, Docker Compose will pull the image automatically and have everything preconfigured for us, like every other image I have used in this article, I opted for the alpine images. Our KeyDB service uses an external volume defined in the volumes section at the bottom of the file so that we can have persistent data, which is important when we might have data we want to keep in databases. Furthermore, the KeyDB section has a `ports` key, which defines the ports that that container uses, and which port it should be mapped to on the host system. it’s not 100% necessary to have this port be exposed, but I like having it exposed so that I can look at the data in an external DB viewer without having to do complicated hacks to access the database in the container. Next, the KeyDB service has a key that tells it to restart unless it's stopped, so if it encounters a crash, or stops unexpectedly it will be restarted by docker automatically. Finally, in our Nginx service, we have a volume that points to a local file and also has `ro` at the end of it, so what gives? The local path mounts the nginx.conf file that we made previously in the article to the path that Nginx looks for the nginx config so that we can use our modified config, and the `ro` at the end of the file tells Docker to mount it as a read-only file in the container.
 
 We’re not quite done yet though, because if you start up the containers you might notice that it might not work properly right away. Our `compose.yml` file should look like this so far:
 
@@ -368,7 +368,7 @@ services:
 
   keydb:
     image: eqalpha/keydb:alpine
-    restart: always
+    restart: unless-stopped
     ports:
       - "6379:6379"
     volumes:
@@ -407,7 +407,7 @@ services:
 
   keydb:
     image: eqalpha/keydb:alpine
-    restart: always
+    restart: unless-stopped
     ports:
       - "6379:6379"
     volumes:

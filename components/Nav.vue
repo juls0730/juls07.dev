@@ -58,9 +58,11 @@ const changeTheme = () => {
                     </li>
                     <li>
                         <button @click="changeTheme">
-                            <Icon v-if="$colorMode.preference === 'dark'" name="tabler:moon" size="22" />
-                            <Icon v-else-if="$colorMode.preference === 'light'" name="tabler:sun-high" size="22" />
-                            <Icon v-else name="ph:monitor-bold" size="22" />
+                            <span class="min-w-[22px]" v-if="$colorMode.unknown != true">
+                                <Icon v-if="$colorMode.preference === 'dark'" name="tabler:moon" size="22" />
+                                <Icon v-else-if="$colorMode.preference === 'light'" name="tabler:sun-high" size="22" />
+                                <Icon v-else name="ph:monitor-bold" size="22" />
+                            </span>
                         </button>
                     </li>
                 </ul>

@@ -8,7 +8,7 @@ let year = new Date().getFullYear();
 
 let route = useRoute();
 const { data: doc } = await useAsyncData(`${route.path}-data`, () => queryContent(route.path).findOne())
-if (!doc) {
+if (!doc.value) {
     throw createError({ statusCode: 404, statusMessage: 'Article not found', fatal: true })
 }
 

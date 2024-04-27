@@ -17,11 +17,11 @@ useHead({
                     }" v-slot="{ data }">
                     <div v-for="article in data" :key="article._path" class="mb-5 px-1.5">
                         <div
-                            class="dark:bg-dark-slate bg-touched-lavender max-h-[563.25px] h-[563.25px] overflow-hidden rounded-lg border border-soft-lilac dark:border-midnight-slate/30 shadow-md">
+                            class="flex flex-col dark:bg-dark-slate bg-touched-lavender max-h-[563.25px] h-[563.25px] overflow-hidden rounded-lg border border-soft-lilac dark:border-midnight-slate/30 shadow-md">
                             <NuxtImg v-if="article.image" :src="article.image.src" width="464" densities="1x 2x"
                                 quality="80" class="w-full rounded-tl-lg rounded-tr-lg aspect-video" loading="lazy" />
                             <div
-                                class="p-3 overflow-hidden pt-2 text-fade dark:before:bg-[linear-gradient(180deg,transparent_0,hsla(0,0%,5%,0)_36%,#0C0B0C_95%,#0C0B0C)] before:bg-[linear-gradient(180deg,transparent_0,hsla(0,0%,5%,0)_36%,#F5EDFE_95%,#F5EDFE)] mb-1 pb-1 relative">
+                                class="flex-shrink p-3 overflow-hidden pt-2 text-fade dark:before:bg-[linear-gradient(180deg,transparent_0,hsla(0,0%,5%,0)_36%,#0C0B0C_95%,#0C0B0C)] before:bg-[linear-gradient(180deg,transparent_0,hsla(0,0%,5%,0)_36%,#F5EDFE_95%,#F5EDFE)] mb-1 pb-1 relative">
                                 <h3>
                                     <nuxt-link tabindex="0" class="text-lg" :to="article._path">
                                         {{ article.title }}
