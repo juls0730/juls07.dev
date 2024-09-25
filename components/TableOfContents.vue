@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { watchDebounced } from '@vueuse/core'
 import type { Ref } from 'vue';
 
 const props = withDefaults(defineProps<{ doc: any, activeTocId: string | null }>(), {})
@@ -23,22 +22,24 @@ const onClick = (id: string) => {
 const tocHeader = ref();
 const tocIsClosed = ref(false);
 
-watchDebounced(
+watch(
     () => props.activeTocId,
     (newActiveTocId) => {
-        const h2Link = tocLinksH2.value.find((el: HTMLElement) => el.id === `toc-${newActiveTocId}`)
-        const h3Link = tocLinksH3.value.find((el: HTMLElement) => el.id === `toc-${newActiveTocId}`)
+        if (import.meta.client) {
+            const h2Link = tocLinksH2.value.find((el: HTMLElement) => el.id === `toc-${newActiveTocId}`)
+            const h3Link = tocLinksH3.value.find((el: HTMLElement) => el.id === `toc-${newActiveTocId}`)
 
-        // TODO: dont hard code these offsets
-        if (h2Link) {
-            sliderHeight.value = h2Link.offsetHeight
-            sliderTop.value = h2Link.offsetTop - 24
-        } else if (h3Link) {
-            sliderHeight.value = h3Link.offsetHeight
-            sliderTop.value = h3Link.offsetTop - 24
+            // TODO: dont hard code these offsets
+            if (h2Link) {
+                sliderHeight.value = h2Link.offsetHeight
+                sliderTop.value = h2Link.offsetTop - 24
+            } else if (h3Link) {
+                sliderHeight.value = h3Link.offsetHeight
+                sliderTop.value = h3Link.offsetTop - 24
+            }
         }
     },
-    { debounce: 0, immediate: true }
+    { immediate: true }
 )
 </script>
 

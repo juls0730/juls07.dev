@@ -1,10 +1,20 @@
 import { defineNuxtConfig } from 'nuxt/config';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    compatibilityDate: '2024-09-25',
+    ssr: true,
+
     app: {
         head: {
             title: 'Juls07',
-
+            script: [
+                {
+                    vmid: 'themeScript',
+                    hid: 'theme-script',
+                    children: `if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {document.documentElement.classList.add('dark')} else {document.documentElement.classList.remove('dark')}`,
+                    type: 'text/javascript',
+                }
+            ],
             meta: [
                 { charset: 'utf-8' },
                 { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -21,10 +31,6 @@ export default defineNuxtConfig({
         },
     },
 
-    colorMode: {
-        classSuffix: ''
-    },
-
     content: {
         highlight: {
             theme: {
@@ -39,24 +45,24 @@ export default defineNuxtConfig({
         '@/assets/css/main.css',
     ],
 
-
     devtools: {
         enabled: true
     },
 
     experimental: {
-        payloadExtraction: true
+        payloadExtraction: false
     },
 
     image: {
         provider: 'ipx'
     },
 
-    modules: ['nuxt-icon', '@nuxt/content', '@nuxtjs/color-mode', '@nuxt/image'],
+    modules: ['nuxt-icon', '@nuxt/content', '@nuxt/image'],
 
     nitro: {
         plugins: ['plugins/read-time.ts'],
         preset: 'static',
+        minify: true,
         prerender: {
             crawlLinks: true,
             routes: ['/sitemap.xml', '/rss.xml']
@@ -77,4 +83,8 @@ export default defineNuxtConfig({
     },
 
     sourcemap: false,
+
+    webpack: {
+        optimizeCSS: true,
+    },
 })

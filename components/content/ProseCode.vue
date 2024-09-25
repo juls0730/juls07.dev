@@ -29,9 +29,7 @@
 </template>
 
 <script setup lang="ts">
-import { useClipboard } from '@vueuse/core';
-const { copy, copied } = useClipboard();
-const props = withDefaults(
+withDefaults(
     defineProps<{
         code?: string;
         language?: string | null;
@@ -42,6 +40,7 @@ const props = withDefaults(
 );
 
 const codeElm = ref();
+let copied = ref(false);
 
 const copyCode = () => {
     if (!codeElm.value) {
@@ -58,7 +57,13 @@ const copyCode = () => {
         }
     }
 
-    copy(str);
+    if (import.meta.client) {
+        navigator.clipboard.writeText(str);
+        copied.value = true;
+        setTimeout(() => {
+            copied.value = false;
+        }, 2000);
+    }
 };
 </script>
 

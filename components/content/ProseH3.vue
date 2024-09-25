@@ -3,7 +3,7 @@
         <h3 :id="id" class="text-xl">
             <slot />
         </h3>
-        <button @click="copy(location.origin + location.pathname + '#' + id)"
+        <button @click="copy('https://juls07.dev' + route.path + '#' + id)"
             class="dark:text-white ml-2 group-hover:opacity-100 opacity-0 transition-all">
             <div class="h-5" v-if="copied">
                 <Icon size="20" name="tabler:check" />
@@ -16,8 +16,6 @@
 </template>
 
 <script setup lang="ts">
-import { useBrowserLocation, useClipboard } from '@vueuse/core';
-const { copy, copied } = useClipboard();
 withDefaults(
     defineProps<{
         id?: string;
@@ -25,7 +23,18 @@ withDefaults(
     { id: '' }
 );
 
-const location = useBrowserLocation()
+let copied = ref(false);
+const copy = (text: string) => {
+    if (import.meta.client) {
+        navigator.clipboard.writeText(text)
+        copied.value = true;
+        setTimeout(() => {
+            copied.value = false;
+        }, 2000);
+    }
+};
+
+const route = useRoute();
 </script>
 
 <style scoped>

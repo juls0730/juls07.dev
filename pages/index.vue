@@ -1,5 +1,4 @@
 <script setup lang="ts">
-let colorMode = useColorMode();
 let today = new Date();
 let age = today.getFullYear() - 2008;
 
@@ -151,21 +150,21 @@ let projects: Project[] = [
                 <h3 class="text-2xl md:text-3xl mb-1.5 ml-0.5">Skills</h3>
                 <section class="flex flex-wrap w-full gap-2 justify-start ml-1">
                     <IconTag name="TypeScript" iconName="skill-icons:typescript" />
-                    <IconTag name="Nuxt.js" :iconName="'skill-icons:nuxtjs-' + $colorMode.value" />
-                    <IconTag name="Vue.js" :iconName="'skill-icons:vuejs-' + $colorMode.value" />
+                    <IconTag name="Nuxt.js" iconName="skill-icons:nuxtjs-dark" />
+                    <IconTag name="Vue.js" iconName="skill-icons:vuejs-dark" />
                     <IconTag name="Ruby on rails" iconName="skill-icons:rails" />
-                    <IconTag name="php" :iconName="'skill-icons:php-' + $colorMode.value" />
-                    <IconTag name="React" :iconName="'skill-icons:react-' + $colorMode.value" />
-                    <IconTag name="Bash" :iconName="'skill-icons:bash-' + $colorMode.value" />
-                    <IconTag name="Tailwindcss" :iconName="'skill-icons:tailwindcss-' + $colorMode.value" />
+                    <IconTag name="php" iconName="skill-icons:php-dark" />
+                    <IconTag name="React" iconName="skill-icons:react-dark" />
+                    <IconTag name="Bash" iconName="skill-icons:bash-dark" />
+                    <IconTag name="Tailwindcss" iconName="skill-icons:tailwindcss-dark" />
                     <IconTag name="Rust" iconName="skill-icons:rust" />
-                    <IconTag name="Node.js" :iconName="'skill-icons:nodejs-' + $colorMode.value" />
+                    <IconTag name="Node.js" iconName="skill-icons:nodejs-dark" />
                     <IconTag name="Svelte" iconName="skill-icons:svelte" />
-                    <IconTag name="Figma" :iconName="'skill-icons:figma-' + $colorMode.value" />
+                    <IconTag name="Figma" iconName="skill-icons:figma-dark" />
                     <IconTag name="Electron" iconName="skill-icons:electron" />
-                    <IconTag name="Cypress" :iconName="'skill-icons:cypress-' + $colorMode.value" />
+                    <IconTag name="Cypress" iconName="skill-icons:cypress-light" />
                     <IconTag name="Prisma" iconName="skill-icons:prisma" />
-                    <IconTag name="Docker" icon-name="skill-icons:docker" />
+                    <IconTag name="Docker" iconName="skill-icons:docker" />
                 </section>
             </section>
             <div class="!col-start-2 md:!col-start-3 lg:!col-start-4 lg:col-span-6 md:col-span-8 col-span-10">

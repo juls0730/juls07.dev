@@ -1,144 +1,47 @@
-<script setup lang="ts">
-import { withoutTrailingSlash } from 'ufo'
-import { useBrowserLocation, useClipboard } from '@vueuse/core';
-const { copy, copied } = useClipboard();
-const location = useBrowserLocation()
-
-let year = new Date().getFullYear();
-
-let route = useRoute();
-const { data: doc } = await useAsyncData(`${route.path}-data`, () => queryContent(route.path).findOne())
-if (!doc.value) {
-    throw createError({ statusCode: 404, statusMessage: 'Article not found', fatal: true })
-}
-
-const { data: surround } = await useAsyncData(`${route.path}-surround`, () => queryContent('/blog')
-    .where({ _extension: 'md' })
-    .only(['title', 'description', '_path'])
-    .sort({ date: 1 })
-    .where({ _draft: false })
-    .findSurround(withoutTrailingSlash(route.path))
-)
-
-const activeTocId: Ref<string | null> = ref(null)
-const nuxtContent = ref(null)
-
-const updateActiveHeading = () => {
-    const headings = document.querySelectorAll('#main h2[id], #main h3[id]')
-    const windowHeight = window.innerHeight
-    const windowMidpoint = windowHeight / 2
-
-    headings.forEach((heading) => {
-        const headingRect = heading.getBoundingClientRect()
-        const headingBottom = headingRect.bottom
-
-        if (headingBottom <= windowMidpoint) {
-            activeTocId.value = heading.id
-        }
-    })
-}
-
-onMounted(() => {
-    window.addEventListener('scroll', updateActiveHeading)
-})
-
-onUnmounted(() => {
-    window.removeEventListener('scroll', updateActiveHeading)
-})
-
-useSeoMeta({
-    title: doc.value?.title,
-    description: doc.value?.description,
-    ogTitle: doc.value?.title,
-    ogDescription: doc.value?.description,
-    ogImage: doc.value?.image.src,
-    ogUrl: 'https://juls07.dev',
-    twitterTitle: doc.value?.title,
-    twitterDescription: doc.value?.description,
-    twitterImage: doc.value?.image.src,
-    twitterCard: 'summary_large_image',
-})
-
-useHead({
-    htmlAttrs: {
-        lang: 'en'
-    },
-    meta: [
-        {
-            name: "copyright",
-            content: `© ${year} juls07`
-        },
-        {
-            name: "robots",
-            content: "index, follow"
-        },
-        {
-            name: "keywords",
-            content: doc.value?.tags.join(", ")
-        },
-        {
-            name: "author",
-            content: "juls07",
-        }
-    ],
-    link: [
-        {
-            rel: 'icon',
-            type: 'image/png',
-            href: '/favicon.png'
-        }
-    ]
-})
-</script>
-
 <template>
     <div class="min-h-screen">
         <Nav />
         <div class="grid grid-cols-12 gap-x-5 justify-center pt-6 mb-4 relative">
-            <div class="!col-start-2 md:!col-start-3 lg:!col-start-4 lg:col-span-6 md:col-span-8 col-span-10 order-1">
-                <NuxtImg v-if="doc.image" :src="doc.image.src" class="mb-2 rounded-md drop-shadow w-full"
-                    quality="80" />
-                <h1 class="text-3xl dark:text-gray-100 md:text-4xl font-semibold mb-2">{{ doc.title }}</h1>
-                <p class="mb-1 dark:text-zinc-400 text-zinc-600">
-                    {{ doc.description }}
-                </p>
-                <p class="mb-2 text-zinc-500">
-                    {{ new Date(doc.date).toDateString().split(' ').slice(1).join(' ') }} |
-                    {{ doc.readTime }} minute read
-                </p>
-                <div class="flex flex-wrap w-full gap-2 justify-start mb-3">
-                    <IconTag v-for="tag in doc.tags" :name="tag" :iconName='tag' isTag="true" />
-                </div>
-                <hr class="mb-4 border-[#ECE6E7] dark:border-[#232326] border-t" />
-            </div>
-            <div class="!col-start-2 md:!col-start-3 lg:!col-start-4 lg:col-span-6 md:col-span-8 col-span-10 order-3">
-                <main id="main" class="leading-relaxed">
-                    <ContentRenderer ref="nuxtContent" class="dark:text-gray-200 text-gray-800" :value="doc" />
-                </main>
-            </div>
-            <nav
-                class="lg:ml-2 mb-3 lg:mb-0 col-start-2 md:col-start-3 lg:block lg:col-start-10 lg:col-span-2 md:col-span-8 col-span-10 lg:sticky lg:top-8 h-fit order-2 lg:order-4">
-                <TableOfContents :doc="doc" :activeTocId="activeTocId" />
-            </nav>
-            <div class="!col-start-2 md:!col-start-3 lg:!col-start-4 lg:col-span-6 md:col-span-8 col-span-10 order-5">
-                <div class="flex justify-between mt-10">
-                    <NuxtLink class="flex items-center text-fuschia hover:underline visited:bg-rose-700" to="/blog">
-                        ← Back to Blog
-                    </NuxtLink>
-                    <button class="flex items-center px-2 py-1" @click="copy(location.origin + location.pathname)">
-                        <Icon v-if="copied" name="tabler:check" class="mr-1.5" size="20" />
-                        <Icon v-else name="tabler:link" class="mr-1.5" size="20" />
-                        Copy Link
-                    </button>
-                </div>
-                <hr class="my-6 border-[#ECE6E7] dark:border-[#232326] border-t" />
-                <div v-if="surround" class="sm:grid gap-8 sm:grid-cols-2">
-                    <MiniBlogCard v-if="surround[0]" :to="surround[0]._path" :title="surround[0].title"
-                        :description="surround[0].description" />
-                    <MiniBlogCard class="col-start-2" v-if="surround[1]" :to="surround[1]._path"
-                        :title="surround[1].title" :right-align="true" :description="surround[1].description" />
-                </div>
-            </div>
+            <Suspense>
+                <Blog />
+                <template #fallback>
+                    <div
+                        class="!col-start-2 md:!col-start-3 lg:!col-start-4 lg:col-span-6 md:col-span-8 col-span-10 order-1">
+                        <div
+                            class="mb-2 rounded-md drop-shadow w-full dark:bg-zinc-400 bg-zinc-600 animate-pulse aspect-video">
+                        </div>
+                        <div class="h-9 mb-2 rounded-lg dark:bg-zinc-400 bg-zinc-600 animate-pulse"
+                            :style="{ width: `${Math.max(Math.ceil(Math.random() * 100), 55)}%` }"></div>
+                        <div class="h-4 mb-2 rounded-lg dark:bg-zinc-400 bg-zinc-600 animate-pulse"
+                            :style="{ width: `${Math.max(Math.ceil(Math.random() * 65), 15)}%` }"></div>
+                        <div class="h-3 mb-2 rounded-lg bg-zinc-500 animate-pulse"
+                            :style="{ width: `${Math.max(Math.ceil(Math.random() * 50), 10)}%` }"></div>
+                        <div class="flex flex-wrap w-full gap-2 justify-start mb-3">
+                            <div v-for="i in Math.ceil(Math.random() * 4)"
+                                class="font-inter md:text-lg w-fit max-h-9 min-w-fit dark:bg-obsidian-night bg-[hsl(270,68%,95.47%)] border border-soft-lilac dark:border-midnight-slate/30 py-1 px-2 rounded shadow flex items-center">
+                                <div class="mb-1 rounded bg-zinc-500 animate-pulse w-[20px] h-[20px] mr-2"></div>
+                                <div class="h-3 mb-1 rounded-lg bg-zinc-500 animate-pulse"
+                                    :style="{ width: `${(i * 10) + 67}px` }">
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="mb-4 border-[#ECE6E7] dark:border-[#232326] border-t" />
+                        <div
+                            class="!col-start-2 md:!col-start-3 lg:!col-start-4 lg:col-span-6 md:col-span-8 col-span-10 order-3">
+                            <main id="main" class="leading-relaxed">
+                                <div class="max-h-full leading-relaxed">
+                                    <div v-for="i in 100"
+                                        class="h-3 my-1 rounded-lg dark:bg-zinc-400 bg-zinc-600 animate-pulse"
+                                        :style="{ width: `${80 + Math.ceil(Math.random() * 20)}%` }" :class="{
+                                            'mb-4':
+                                                Math.random() > 0.8
+                                        }"></div>
+                                </div>
+                            </main>
+                        </div>
+                    </div>
+                </template>
+            </Suspense>
         </div>
         <footer class="grid grid-cols-12 gap-5 justify-center">
             <div

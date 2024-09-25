@@ -1,21 +1,15 @@
 <script setup lang="ts">
-let colorMode = useColorMode();
-
-const changeTheme = () => {
-    if (colorMode.preference === "dark") {
-        // from dark => light
-        colorMode.preference = "light"
-    } else if (colorMode.preference === "light") {
-        // from light => system
-        colorMode.preference = "system";
-    } else {
-        // from system => dark
-        colorMode.preference = "dark";
+const toggleTheme = () => {
+    if (import.meta.client) {
+        if (document.documentElement.classList.contains('dark')) {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+        } else {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+        }
     }
-
-    return;
-}
-
+};
 </script>
 
 <template>
@@ -28,12 +22,12 @@ const changeTheme = () => {
                         <a href="#main">Skip to content</a>
                     </li>
                     <li>
-                        <NuxtLink to="/">
+                        <NuxtLink :prefetch="true" to="/">
                             Home
                         </NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink to="/blog">
+                        <NuxtLink :prefetch="true" to="/blog">
                             Blog
                         </NuxtLink>
                     </li>
@@ -57,11 +51,10 @@ const changeTheme = () => {
                         </a>
                     </li>
                     <li>
-                        <button @click="changeTheme">
-                            <span class="min-w-[22px]" v-if="$colorMode.unknown != true">
-                                <Icon v-if="$colorMode.preference === 'dark'" name="tabler:moon" size="22" />
-                                <Icon v-else-if="$colorMode.preference === 'light'" name="tabler:sun-high" size="22" />
-                                <Icon v-else name="ph:monitor-bold" size="22" />
+                        <button @click="toggleTheme">
+                            <span class="min-w-[22px]">
+                                <Icon class="theme-dark" name="tabler:moon" size="22" />
+                                <Icon class="theme-light" name="tabler:sun-high" size="22" />
                             </span>
                         </button>
                     </li>
@@ -75,5 +68,21 @@ const changeTheme = () => {
 <style scoped>
 button {
     padding: 0.25rem
+}
+
+.theme-dark {
+    display: none !important;
+}
+
+.theme-light {
+    display: inline !important;
+}
+
+html.dark .theme-light {
+    display: none !important;
+}
+
+html.dark .theme-dark {
+    display: inline !important;
 }
 </style>
