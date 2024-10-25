@@ -174,7 +174,7 @@ let projects: Project[] = [
             <section
                 class="max-w-full col-start-2 xs:!col-start-3 col-span-10 xs:col-span-8 pb-6 mb-4 gap-4 justify-evenly grid grid-cols-1 smyes :grid-cols-[repeat(auto-fit,_minmax(50px,_340px))] lg:grid-cols-[repeat(auto-fit,_minmax(50px,_300px))]">
                 <ProjectCard v-for="project in projects" :name="project.name" :headerIcon="project.headerIcon"
-                    :icons="project.icons" :githubLink="project.repo" :externalLink="project.externalLink">
+                    :icons="project.icons" :repo="project.repo" :externalLink="project.externalLink">
                     <slot>
                         <p v-html="project.body" />
                     </slot>
