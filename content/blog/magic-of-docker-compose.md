@@ -446,6 +446,6 @@ You will see that the counter ticks up exactly 10000 requests, and it will compl
 
 In summary, Docker Compose is an amazing tool for managing full-stack projects efficiently. It abstracts away many of the complexities involved in the various services and dependencies, allowing you to focus on what really matters: building great projects. Once you get the hang of using Docker Compose, you will find yourself incorporating it into many of your projects, both new and old.
 
-If you want to dive deeper into the example project I described in this post, feel free to check out the [Github repo](https://github.com/juls0730/docker-compose-vue-example) for the full source code. Experimenting with Docker Compose in your own projects will help you appreciate its power and simplicity.
+If you want to dive deeper into the example project I described in this post, feel free to check out the [Github repo](/github/docker-compose-vue-example) for the full source code. Experimenting with Docker Compose in your own projects will help you appreciate its power and simplicity.
 
 Thanks for reading, and I hope this article has sparked interest in Docker Compose. Whether you’re an experienced dev, or just starting out, give Docker Compose a try, and you may find it becomes an essential part of your development workflow!

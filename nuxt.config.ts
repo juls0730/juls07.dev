@@ -65,6 +65,7 @@ export default defineNuxtConfig({
         minify: true,
         prerender: {
             crawlLinks: true,
+            ignore: ['/github'],
             routes: ['/sitemap.xml', '/rss.xml']
         },
     },

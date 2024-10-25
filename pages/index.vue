@@ -60,7 +60,7 @@ type ProjectIcon = {
 type Project = {
     headerIcon: string | string[],
     name: string,
-    githubLink?: string,
+    repo?: string,
     externalLink?: string,
     body: string,
     icons: ProjectIcon[],
@@ -70,42 +70,42 @@ let projects: Project[] = [
     {
         headerIcon: "mdi:language-rust",
         name: "CappuccinOS",
-        githubLink: "https://github.com/juls0730/CappuccinOS",
+        repo: "CappuccinOS",
         body: "CappuccinOS is a Rust operating system built from scratch targeting x86_64. This project has oppened my eyes to low level development and let me learn a lot about Rust.",
         icons: [{ icon: 'skill-icons:rust', name: 'Rust' }]
     },
     {
         headerIcon: "tabler:brand-nuxt",
         name: "Juls07.dev",
-        githubLink: "https://github.com/juls0730/juls07.dev",
+        repo: "juls07.dev",
         body: "This is the site you're currently on, a simple but decent enough portfolio and blog site.",
         icons: [{ icon: 'logos:nuxt-icon', name: 'nuxtjs v3' }]
     },
     {
         headerIcon: "mdi:language-php",
         name: "PHP Forum",
-        githubLink: "https://github.com/juls0730/php-forum",
+        repo: "php-forum",
         body: "This was my first fullstack project and one of my first projects I ever released the source code of.",
         icons: [{ icon: 'logos:laravel', name: 'php' }, { icon: 'logos:mysql-icon', name: 'MySQL' }]
     },
     {
         headerIcon: "tabler:brand-vue",
         name: "vuefullstack",
-        githubLink: "https://github.com/juls0730/vuefullstack",
+        repo: "vuefullstack",
         body: "I used this project to learn more about fullstack web development using vue.js. It's just a simple forum, similar to reddit, but much simpler.",
         icons: [{ icon: 'logos:vue', name: 'vue v3' }, { icon: 'logos:nodejs-icon-alt', name: 'node.js' }, { icon: 'logos:mongodb-icon', name: 'Mongodb' }]
     },
     {
         headerIcon: "tabler:brand-nuxt",
         name: "Discord Clone",
-        githubLink: "https://github.com/juls0730/discord-clone",
+        repo: "discord-clone",
         body: "Excited by Nuxt 3's recent stable release at the time, I jumped on the opportunity to build a fullstack application with it. This project was an amazing learning experience and I had a blast making it!",
         icons: [{ icon: 'logos:nuxt-icon', name: 'nuxtjs v3' }, { icon: 'logos:docker-icon', name: 'Docker' }, { icon: 'logos:postgresql', name: 'Postgres' }]
     },
     {
         headerIcon: "tabler:code-dots",
         name: "100DaysOfCode",
-        githubLink: "https://github.com/juls0730/100DaysOfCode",
+        repo: "100DaysOfCode",
         body: "In the middle of september 2022, I started a 100 days of code challenge, and I wanted to make a UI framework similar to Vue or Svelte. I learned a ton and had a bunch of fun!",
         icons: [{ icon: 'logos:nodejs-icon-alt', name: 'node.js' }, { icon: 'logos:typescript-icon', name: 'Typescript' }]
     }
@@ -144,8 +144,7 @@ let projects: Project[] = [
                     development. I first dabbled in web development when I was ten, and here we are today! I mainly use
                     <a href="https://nuxt.com">NuxtJs</a> to build my websites since I absolutely adore Vuejs. For me, I
                     love being able to imagine anything and it to come to life. Finally, go checkout my <a
-                        href="https://github.com/juls0730">Github</a> and also my <a
-                        href="https://twitter.com/julie4055_">Twitter</a>.
+                        href="/github">Github</a> and also my <a href="https://twitter.com/julie4055_">Twitter</a>.
                 </p>
                 <h3 class="text-2xl md:text-3xl mb-1.5 ml-0.5">Skills</h3>
                 <section class="flex flex-wrap w-full gap-2 justify-start ml-1">
@@ -171,11 +170,11 @@ let projects: Project[] = [
                 <h2 class="md:text-4xl text-3xl mb-1">Projects</h2>
             </div>
             <!-- <section
-				class="pb-6 grid mb-4 col-start-2 xs:!col-start-3 col-span-10 xs:col-span-8 grid-cols-12 gap-y-6 sm:gap-x-6 max-w-full"> -->
+                class="pb-6 grid mb-4 col-start-2 xs:!col-start-3 col-span-10 xs:col-span-8 grid-cols-12 gap-y-6 sm:gap-x-6 max-w-full"> -->
             <section
                 class="max-w-full col-start-2 xs:!col-start-3 col-span-10 xs:col-span-8 pb-6 mb-4 gap-4 justify-evenly grid grid-cols-1 smyes :grid-cols-[repeat(auto-fit,_minmax(50px,_340px))] lg:grid-cols-[repeat(auto-fit,_minmax(50px,_300px))]">
                 <ProjectCard v-for="project in projects" :name="project.name" :headerIcon="project.headerIcon"
-                    :icons="project.icons" :githubLink="project.githubLink" :externalLink="project.externalLink">
+                    :icons="project.icons" :githubLink="project.repo" :externalLink="project.externalLink">
                     <slot>
                         <p v-html="project.body" />
                     </slot>
