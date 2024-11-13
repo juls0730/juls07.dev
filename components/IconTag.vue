@@ -31,7 +31,10 @@ export default {
                 'linux': 'linux-tux',
                 'bittorrent': 'webtorrent',
                 'web-server': 'nginx',
-                'supabase': 'supabase-icon'
+                'supabase': 'supabase-icon',
+                // idk these are good enough
+                'organization': 'notion-icon',
+                'productivity': 'obsidian-icon',
             },
         }
     },

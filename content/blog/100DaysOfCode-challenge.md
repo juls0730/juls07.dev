@@ -4,7 +4,7 @@ description: A review of my 100DaysOfCode challenge
 image:
   src: "/images/100DaysOfCode-overview.webp"
   alt: "How I made my site fast"
-date: January 01, 2023
+date: 2023-01-01T00:00
 tags:
   - web dev
   - nodejs

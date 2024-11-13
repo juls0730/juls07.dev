@@ -4,7 +4,7 @@ description: My experience with a qbittorrent webserver
 image:
   src: "/images/qbittorrent-web.webp"
   alt: "Qbittorrent web server"
-date: March 07, 2022
+date: 2022-03-07T00:00
 tags:
   - Linux
   - Bittorrent

@@ -4,7 +4,7 @@ description: All of my reasons for choosing archlinux
 image:
   src: /images/archlinux.webp
   alt: "Why I chose archlinux"
-date: March 07, 2022
+date: 2022-03-07T00:00
 tags:
   - Linux
   - archlinux

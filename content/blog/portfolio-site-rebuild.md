@@ -4,7 +4,7 @@ description: My experiences with nuxtjs 3 and tRPC
 image:
   src: "/images/website-rebuild.webp"
   alt: "placeholder"
-date: January 01, 2023
+date: 2023-01-01T00:00
 tags:
   - web dev
   - nuxtjs 3

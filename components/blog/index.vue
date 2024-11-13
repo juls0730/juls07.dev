@@ -47,10 +47,9 @@ if (!doc.value) {
     throw createError({ statusCode: 404, statusMessage: 'Article not found', fatal: true })
 }
 
-const { data: surround } = await useAsyncData(`${route.path}-surround`, () => queryContent('/blog')
-    .where({ _extension: 'md' })
-    .only(['title', 'description', '_path'])
-    .sort({ date: 1 })
+const { data: surround } = await useAsyncData(`${route.path}-surround`, () => queryContent()
+    .only(['title', 'description', '_path', 'date'])
+    .sort({ date: -1 })
     .where({ _draft: false })
     .findSurround(withoutTrailingSlash(route.path))
 )

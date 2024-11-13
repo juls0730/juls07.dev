@@ -4,7 +4,7 @@ description: My experiences with nuxtjs 3 and tRPC
 image:
   src: "/images/archlinux.webp"
   alt: "Why I chose archlinux"
-date: September 20, 2020
+date: 2020-09-20T00:00
 _draft: true
 tags:
   - web dev

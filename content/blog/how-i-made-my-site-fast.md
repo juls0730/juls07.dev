@@ -4,7 +4,7 @@ description: How I made my social media site fast
 image:
   src: "/images/how-i-made-my-site-fast.webp"
   alt: "How I made my site fast"
-date: May 22, 2022
+date: 2022-05-22T00:00
 tags:
   - web dev
   - fullstack development

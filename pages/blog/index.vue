@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import BlogSkeletonCard from '~/components/blog/BlogSkeletonCard.vue';
-
 useHead({
     title: 'Juls07',
 })
@@ -13,10 +11,10 @@ useHead({
             <div id="main" class="gap-4 justify-evenly py-2 grid grid-cols-[repeat(auto-fit,_minmax(50px,_450px))]">
                 <ContentQuery path="blog"
                     :only="['image', '_path', 'title', 'description', 'date', 'tags', 'excerpt', 'readTime']" :sort="{
-                        date: 1
+                        date: -1
                     }" :where="{
-                            _draft: false
-                        }" v-slot="{ data }">
+                        _draft: false
+                    }" v-slot="{ data }">
                     <div v-for="article in data" :key="article._path" class="mb-5 px-1.5">
                         <BlogCard :article="article" />
                     </div>

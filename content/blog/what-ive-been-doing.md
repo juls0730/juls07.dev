@@ -4,7 +4,7 @@ description: Stuff I've been doing recently
 image:
   src: "/images/what-ive-been-doing.webp"
   alt: "What I've been doing recently"
-date: May 21, 2022
+date: 2022-05-21T00:00
 tags:
   - web dev
   - fullstack development

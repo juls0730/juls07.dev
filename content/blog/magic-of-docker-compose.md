@@ -4,7 +4,7 @@ description: Simplify your life with Docker Compose
 image:
   src: "/images/magic-of-docker-compose.webp"
   alt: "How I made my site fast"
-date: April 23, 2024
+date: 2024-04-23T00:00
 tags:
   - web dev
   - docker
