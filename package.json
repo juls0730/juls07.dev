@@ -1,28 +1,31 @@
 {
-    "name": "nuxt-app",
-    "private": true,
-    "scripts": {
-        "build": "nuxt build",
-        "dev": "nuxt dev",
-        "generate": "nuxt generate",
-        "preview": "nuxt preview",
-        "postinstall": "nuxt prepare"
-    },
-    "devDependencies": {
-        "@nuxt/devtools": "^1.5.1",
-        "@nuxt/image": "^1.8.0",
-        "@types/rss": "^0.0.32",
-        "autoprefixer": "^10.4.20",
-        "nuxt": "^3.13.2",
-        "nuxt-icon": "^0.6.10",
-        "postcss": "^8.4.47",
-        "rss": "^1.2.2",
-        "sitemap": "^7.1.2",
-        "tailwindcss": "^3.4.13"
-    },
-    "dependencies": {
-        "@nuxt/content": "^2.13.2",
-        "sharp": "^0.33.5",
-        "xml": "^1.0.1"
-    }
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "^1.6.0",
+    "@nuxt/image": "^1.8.1",
+    "@types/rss": "^0.0.32",
+    "autoprefixer": "^10.4.20",
+    "nuxt": "^3.14.159",
+    "nuxt-icon": "^0.6.10",
+    "postcss": "^8.4.49",
+    "rss": "^1.2.2",
+    "sitemap": "^7.1.2",
+    "tailwindcss": "^3.4.14"
+  },
+  "dependencies": {
+    "@nuxt/content": "^2.13.4",
+    "sharp": "^0.33.5",
+    "xml": "^1.0.1"
+  },
+  "trustedDependencies": [
+    "@parcel/watcher"
+  ]
 }

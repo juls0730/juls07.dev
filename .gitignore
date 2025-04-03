@@ -10,3 +10,5 @@ dist
 # Supabase
 supabase/.branches
 supabase/.temp
+
+.stignore

@@ -6,7 +6,7 @@ export default {
 
 <template>
     <div
-        class="dark:bg-dark-slate bg-touched-lavender relative border p-6 h-[60vw] max-h-[425px] min-h-[375px] border-soft-lilac dark:border-midnight-slate/30 shadow-md rounded-lg">
+        class="flex flex-col dark:bg-dark-slate bg-touched-lavender relative border p-6 border-soft-lilac dark:border-midnight-slate/30 shadow-md rounded-lg">
         <div class="flex mb-4 items-center" v-if="headerIcon">
             <Icon size="64" class="text-sea-green" :name="headerIcon" />
             <div class="ml-auto flex">
@@ -24,7 +24,7 @@ export default {
         <div id="body" class="mb-4">
             <slot />
         </div>
-        <div class="flex flex-wrap gap-2 absolute bottom-6" v-if="icons">
+        <div class="flex flex-wrap mt-auto gap-2" v-if="icons">
             <IconTag v-for="icon in icons" size="16" :name="icon.name" :iconName="icon.icon"></IconTag>
         </div>
     </div>

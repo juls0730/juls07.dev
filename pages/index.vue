@@ -115,7 +115,7 @@ let projects: Project[] = [
 <template>
     <div class="min-h-screen">
         <Nav class="absolute z-10 text-white" />
-        <header class="w-full h-[50vh] sm:h-[40vh] md:h-[60vh]">
+        <header class="w-full h-[60vh]">
             <div
                 class="p-6 bg-[#1212121A] justify-center grid sm:grid-cols-12 gap-5 items-center sm:justify-start w-full h-full blur-background">
                 <div
@@ -170,9 +170,9 @@ let projects: Project[] = [
                 <h2 class="md:text-4xl text-3xl mb-1">Projects</h2>
             </div>
             <!-- <section
-                class="pb-6 grid mb-4 col-start-2 xs:!col-start-3 col-span-10 xs:col-span-8 grid-cols-12 gap-y-6 sm:gap-x-6 max-w-full"> -->
+                class="pb-6 grid mb-4 col-start-2 xs:!col-start-3 col-span-10 xs:col-span-8 grid-cols-12 gap-y-6 sm:gap-x-6 max-w-full col-start-2 xs:!col-start-3 col-span-10 xs:col-span-8 pb-6 mb-4 gap-4 justify-evenly grid grid-cols-1 smyes :grid-cols-[repeat(auto-fit,_minmax(50px,_340px))] lg:grid-cols-[repeat(auto-fit,_minmax(50px,_300px))]"> -->
             <section
-                class="max-w-full col-start-2 xs:!col-start-3 col-span-10 xs:col-span-8 pb-6 mb-4 gap-4 justify-evenly grid grid-cols-1 smyes :grid-cols-[repeat(auto-fit,_minmax(50px,_340px))] lg:grid-cols-[repeat(auto-fit,_minmax(50px,_300px))]">
+                class="max-w-full pb-6 mb-4 gap-6 grid col-start-1 col-span-12 xs:col-span-10 xs:col-start-2 auto-rows-fr grid-cols-1 xs:grid-cols-[repeat(auto-fit,_minmax(340px,_1fr))] justify-evenly">
                 <ProjectCard v-for="project in projects" :name="project.name" :headerIcon="project.headerIcon"
                     :icons="project.icons" :repo="project.repo" :externalLink="project.externalLink">
                     <slot>
