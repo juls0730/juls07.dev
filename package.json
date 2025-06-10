@@ -9,23 +9,27 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^1.6.0",
-    "@nuxt/image": "^1.8.1",
+    "@nuxt/devtools": "^1.7.0",
+    "@nuxt/image": "^1.10.0",
     "@types/rss": "^0.0.32",
-    "autoprefixer": "^10.4.20",
-    "nuxt": "^3.14.159",
+    "autoprefixer": "^10.4.21",
+    "nuxt": "^3.17.5",
     "nuxt-icon": "^0.6.10",
-    "postcss": "^8.4.49",
+    "postcss": "^8.5.4",
     "rss": "^1.2.2",
     "sitemap": "^7.1.2",
-    "tailwindcss": "^3.4.14"
+    "tailwindcss": "^3.4.17"
   },
   "dependencies": {
     "@nuxt/content": "^2.13.4",
-    "sharp": "^0.33.5",
+    "caniuse-lite": "^1.0.30001721",
+    "sharp": "^0.34.2",
     "xml": "^1.0.1"
   },
   "trustedDependencies": [
-    "@parcel/watcher"
+    "@parcel/watcher",
+    "esbuild",
+    "sharp",
+    "vue-demi"
   ]
 }

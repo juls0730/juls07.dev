@@ -101,7 +101,8 @@ useHead({
 
 <template>
     <div class="!col-start-2 md:!col-start-3 lg:!col-start-4 lg:col-span-6 md:col-span-8 col-span-10 order-1">
-        <NuxtImg v-if="doc && doc.image" :src="doc.image.src" class="mb-2 rounded-md drop-shadow w-full" quality="80" />
+        <NuxtImg v-if="doc && doc.image" :src="doc.image.src" class="mb-2 rounded-md drop-shadow w-full aspect-video"
+            quality="80" densities="1x 2x" placeholder />
         <h1 class="text-3xl dark:text-gray-100 md:text-4xl font-semibold mb-2">{{ doc?.title }}</h1>
         <p class="mb-1 dark:text-zinc-400 text-zinc-600">
             {{ doc?.description }}
