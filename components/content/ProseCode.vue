@@ -9,7 +9,7 @@
                 {{ filename }}
             </span>
         </div>
-        <div ref="codeElm">
+        <div style="font-variant-ligatures: none" ref="codeElm">
             <slot />
         </div>
         <div class="bottom-container">

@@ -1,4 +1,4 @@
-import { defineNuxtConfig } from 'nuxt/config';
+import { defineNuxtConfig } from 'nuxt/config'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     compatibilityDate: '2024-09-25',
@@ -13,21 +13,26 @@ export default defineNuxtConfig({
                     hid: 'theme-script',
                     children: `if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {document.documentElement.classList.add('dark')} else {document.documentElement.classList.remove('dark')}`,
                     type: 'text/javascript',
-                }
+                },
             ],
             meta: [
                 { charset: 'utf-8' },
-                { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+                {
+                    name: 'viewport',
+                    content: 'width=device-width, initial-scale=1',
+                },
 
                 // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-                { hid: 'description', name: 'description', content: 'Juls07 is a fullstack web developer' }
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: 'Juls07 is a fullstack web developer',
+                },
             ],
-            link: [
-                { rel: 'icon', href: '/favicon.png' }
-            ],
+            link: [{ rel: 'icon', href: '/favicon.png' }],
             htmlAttrs: {
-                lang: 'en'
-            }
+                lang: 'en',
+            },
         },
     },
 
@@ -35,26 +40,37 @@ export default defineNuxtConfig({
         highlight: {
             theme: {
                 dark: 'min-dark',
-                default: 'min-light'
+                default: 'min-light',
             },
-            preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'yaml', 'bash', 'go', 'docker', 'nginx'],
+            preload: [
+                'json',
+                'js',
+                'ts',
+                'html',
+                'css',
+                'vue',
+                'yaml',
+                'bash',
+                'go',
+                'docker',
+                'nginx',
+                'crystal',
+            ],
         },
     },
 
-    css: [
-        '@/assets/css/main.css',
-    ],
+    css: ['@/assets/css/main.css'],
 
     devtools: {
-        enabled: true
+        enabled: true,
     },
 
     experimental: {
-        payloadExtraction: false
+        payloadExtraction: false,
     },
 
     image: {
-        provider: 'ipx'
+        provider: 'ipx',
     },
 
     modules: ['nuxt-icon', '@nuxt/content', '@nuxt/image'],
@@ -65,7 +81,7 @@ export default defineNuxtConfig({
         minify: true,
         prerender: {
             crawlLinks: true,
-            routes: ['/sitemap.xml', '/rss.xml']
+            routes: ['/sitemap.xml', '/rss.xml'],
         },
     },
 
@@ -78,8 +94,8 @@ export default defineNuxtConfig({
 
     router: {
         options: {
-            strict: false
-        }
+            strict: false,
+        },
     },
 
     sourcemap: false,
@@ -88,3 +104,4 @@ export default defineNuxtConfig({
         optimizeCSS: true,
     },
 })
+

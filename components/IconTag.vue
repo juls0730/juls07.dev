@@ -32,6 +32,7 @@ export default {
                 'bittorrent': 'webtorrent',
                 'web-server': 'nginx',
                 'supabase': 'supabase-icon',
+                'programming': 'bash-icon',
                 // idk these are good enough
                 'organization': 'notion-icon',
                 'productivity': 'obsidian-icon',

@@ -1,6 +1,6 @@
 <template>
     <div class="group flex mt-2">
-        <h3 :id="id" class="text-xl">
+        <h3 :id="id" class="text-xl font-semibold">
             <slot />
         </h3>
         <button @click="copy('https://juls07.dev' + route.path + '#' + id)"
